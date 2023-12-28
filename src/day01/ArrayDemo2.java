@@ -1,5 +1,7 @@
 package day01;
 
+import java.util.Arrays;
+
 public class ArrayDemo2 {
 	public static void main(String[] args) {
 		String[] cars = {"Honda", "Toyota", "Tesla", "BMW", "Benz", "BYD"};
@@ -23,5 +25,24 @@ public class ArrayDemo2 {
 		}
 		System.out.printf("油車有 %d 台%n", gasolineCount);
 		System.out.printf("電車有 %d 台%n", electricCount);
+		
+		// 建立油車陣列與電車陣列
+		String[] gasolineCars = new String[gasolineCount];
+		String[] electricCars = new String[electricCount];
+		
+		// 建立油/電車放入資料的初始維度
+		int gIndex = 0;
+		int eIndex = 0;
+		for(int i=0;i<type.length;i++) {
+			if(type[i].equals("油")) {
+				gasolineCars[gIndex] = cars[i];
+				gIndex++;
+			} else if(type[i].equals("電")) {
+				electricCars[eIndex] = cars[i];
+				eIndex++;
+			}
+		}
+		System.out.printf("油車: %s%n", Arrays.toString(gasolineCars));
+		System.out.printf("電車: %s%n", Arrays.toString(electricCars));
 	}
 }
