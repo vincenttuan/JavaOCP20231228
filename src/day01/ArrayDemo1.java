@@ -1,5 +1,7 @@
 package day01;
 
+import java.util.Arrays;
+
 public class ArrayDemo1 {
 
 	public static void main(String[] args) {
@@ -16,6 +18,13 @@ public class ArrayDemo1 {
 		for(int i=0;i<cars.length;i++) {
 			System.out.println(cars[i]);
 		}
+		// 利用 for-each 將 cars 的內容印出
+		for(String car : cars) {
+			System.out.println(car);
+		}
+		// 利用 Arrays.toString() 將 cars 的內容印出
+		System.out.println(Arrays.toString(cars));
+		
 	}
 
 }
