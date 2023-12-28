@@ -14,8 +14,6 @@ public class ArrayDemo2 {
 		// 最後各別印出 gasolineCars 與 electricCars 陣列中的資訊與台數
 		// 印出範例: 油車有 4 台分別是: Honda, Toyota, BMW, Benz 
 		// 印出範例: 電車有 2 台分別是: Tesla, BYD;
-		// case 2:
-		// 請找出最貴的車名與車種(type)
 		
 		// 計算出油車與電車的數量
 		int gasolineCount = 0;
@@ -48,5 +46,20 @@ public class ArrayDemo2 {
 		}
 		System.out.printf("油車: %s%n", Arrays.toString(gasolineCars));
 		System.out.printf("電車: %s%n", Arrays.toString(electricCars));
+		
+		// case 2:
+		// 請找出最貴的價格,車名與車種(type)
+		int maxPrice = 0;
+		int maxIndex = 0;
+		for(int i=0;i<prices.length;i++) {
+			if(prices[i] > maxPrice) {
+				maxPrice = prices[i];
+				maxIndex = i;
+			}
+		}
+		
+		System.out.printf("最貴的價格: %,d 車名: %s 車種: %s%n", prices[maxIndex], cars[maxIndex], types[maxIndex]);
+		
+				
 	}
 }
