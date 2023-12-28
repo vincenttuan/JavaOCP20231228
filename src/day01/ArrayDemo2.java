@@ -6,12 +6,16 @@ public class ArrayDemo2 {
 	public static void main(String[] args) {
 		String[] cars = {"Honda", "Toyota", "Tesla", "BMW", "Benz", "BYD"};
 		String[] types = {"油", "油", "電", "油", "油", "電"};
+		int[] prices = {80_0000, 75_0000, 150_0000, 250_0000, 300_0000, 50_0000};
 		// 寫一個程式可以將
+		// case 1:
 		// 將油車放到 String[] gasolineCars 陣列中
 		// 將電車放到 String[] electricCars 陣列中
 		// 最後各別印出 gasolineCars 與 electricCars 陣列中的資訊與台數
 		// 印出範例: 油車有 4 台分別是: Honda, Toyota, BMW, Benz 
 		// 印出範例: 電車有 2 台分別是: Tesla, BYD;
+		// case 2:
+		// 請找出最貴的車名與車種(type)
 		
 		// 計算出油車與電車的數量
 		int gasolineCount = 0;
