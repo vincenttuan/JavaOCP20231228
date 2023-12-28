@@ -1,0 +1,21 @@
+package day01;
+
+public class ArrayDemo1 {
+
+	public static void main(String[] args) {
+		String[] cars = {"Honda", "Toyota", "BMW", "Benz", "BYD", "Tesla"};
+		System.out.println(cars);
+		System.out.println(cars.length);
+		System.out.println(cars[0]);
+		System.out.println(cars[1]);
+		System.out.println(cars[2]);
+		System.out.println(cars[3]);
+		System.out.println(cars[4]);
+		System.out.println(cars[5]);
+		// 利用 for-loop 將 cars 的內容印出
+		for(int i=0;i<cars.length;i++) {
+			System.out.println(cars[i]);
+		}
+	}
+
+}
