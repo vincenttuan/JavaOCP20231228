@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ArrayDemo2 {
 	public static void main(String[] args) {
 		String[] cars = {"Honda", "Toyota", "Tesla", "BMW", "Benz", "BYD"};
-		String[] type = {"油", "油", "電", "油", "油", "電"};
+		String[] types = {"油", "油", "電", "油", "油", "電"};
 		// 寫一個程式可以將
 		// 將油車放到 String[] gasolineCars 陣列中
 		// 將電車放到 String[] electricCars 陣列中
@@ -16,10 +16,10 @@ public class ArrayDemo2 {
 		// 計算出油車與電車的數量
 		int gasolineCount = 0;
 		int electricCount = 0;
-		for(String t : type) {
-			if(t.equals("油")) {
+		for(String type : types) {
+			if(type.equals("油")) {
 				gasolineCount++;
-			} else if(t.equals("電")) {
+			} else if(type.equals("電")) {
 				electricCount++;
 			}
 		}
@@ -33,11 +33,11 @@ public class ArrayDemo2 {
 		// 建立油/電車放入資料的初始維度
 		int gIndex = 0;
 		int eIndex = 0;
-		for(int i=0;i<type.length;i++) {
-			if(type[i].equals("油")) {
+		for(int i=0;i<types.length;i++) {
+			if(types[i].equals("油")) {
 				gasolineCars[gIndex] = cars[i];
 				gIndex++;
-			} else if(type[i].equals("電")) {
+			} else if(types[i].equals("電")) {
 				electricCars[eIndex] = cars[i];
 				eIndex++;
 			}
