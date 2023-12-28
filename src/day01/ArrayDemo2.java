@@ -10,5 +10,18 @@ public class ArrayDemo2 {
 		// 最後各別印出 gasolineCars 與 electricCars 陣列中的資訊與台數
 		// 印出範例: 油車有 4 台分別是: Honda, Toyota, BMW, Benz 
 		// 印出範例: 電車有 2 台分別是: Tesla, BYD;
+		
+		// 計算出油車與電車的數量
+		int gasolineCount = 0;
+		int electricCount = 0;
+		for(String t : type) {
+			if(t.equals("油")) {
+				gasolineCount++;
+			} else if(t.equals("電")) {
+				electricCount++;
+			}
+		}
+		System.out.printf("油車有 %d 台%n", gasolineCount);
+		System.out.printf("電車有 %d 台%n", electricCount);
 	}
 }
