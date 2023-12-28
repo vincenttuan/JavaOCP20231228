@@ -25,6 +25,13 @@ public class ArrayDemo1 {
 		// 利用 Arrays.toString() 將 cars 的內容印出
 		System.out.println(Arrays.toString(cars));
 		
+		// 陣列複製
+		String[] copiedCars = new String[cars.length];
+		// 利用 System.arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
+		//System.arraycopy(cars, 0, copiedCars, 0, cars.length);
+		System.arraycopy(cars, 1, copiedCars, 3, 2);
+		System.out.println(Arrays.toString(copiedCars));
+		
 	}
 
 }
