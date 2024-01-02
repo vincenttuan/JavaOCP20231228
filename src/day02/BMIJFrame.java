@@ -68,6 +68,7 @@ public class BMIJFrame {
 		// 建立男性和女性的單選紐(RadioButton)
 		JRadioButton maleButton = new JRadioButton("男");
 		maleButton.setBounds(100, 80, 50, 25);
+		//maleButton.setSelected(true);
 		panel.add(maleButton);
 		
 		JRadioButton femaleButton = new JRadioButton("女");
@@ -94,11 +95,16 @@ public class BMIJFrame {
 			
 			// 錯誤處理
 			try {
-				
 				// heightInput.getText() 會得到字串內容
 				// Double.parseDouble() 可以將字串轉 double
 				double h = Double.parseDouble(heightInput.getText());
 				double w = Double.parseDouble(weightInput.getText());
+				
+				if(maleButton.isSelected() == false && femaleButton.isSelected() == false) {
+					JOptionPane.showMessageDialog(panel, "請選擇性別");
+					return;
+				}
+				
 				String sex = maleButton.isSelected() ? "男" : "女";
 				double bmi = calcBmi(h, w);
 				String result = getResult(bmi, sex);
