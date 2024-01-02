@@ -14,9 +14,11 @@ public class MethodDemo2 {
 		// 因為上面有宣告 import static day02.MethodDemo1.calcBmi 
 		// 所以 MethodDemo1 可以不寫
 		double bmi1 = calcBmi(h1, w1);  
-		String result1 = getResult(bmi1);
 		System.out.println(bmi1);
+		
+		String result1 = getResult(bmi1);
 		System.out.println(result1);
+		
 		calcBmiAndPrint(h1, w1);
 		
 	}
