@@ -18,6 +18,18 @@ public class BMIUtil {
 		return result;
 	}
 	
+	// 建立一個可以根據 bmi, sex 得到結果的方法
+	public static String getResult(double bmi, String sex) {
+		int delta = sex.equals("男") ? 2 : 0;
+		String result = "正常";
+		if(bmi > (23 + delta)) {
+			result = "過重";
+		} else if(bmi <= (18 + delta)) {
+			result = "過輕";
+		}
+		return result;
+	}
+	
 	// 建立一個可以計算 bmi 與印出 bmi 資料的方法
 	// 此方法需要 2 個參數, 分別是 h(身高), w(體種)
 	// 此方法執行完後不會有任何回傳值
