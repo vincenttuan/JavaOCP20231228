@@ -101,7 +101,7 @@ public class BMIJFrame {
 				double w = Double.parseDouble(weightInput.getText());
 				String sex = maleButton.isSelected() ? "男" : "女";
 				double bmi = calcBmi(h, w);
-				String result = getResult(bmi);
+				String result = getResult(bmi, sex);
 				String resultMessage = String.format("%.1f %s %s", bmi, sex, result);
 				resultLabel.setText(resultMessage); // 將結果放到 resultLabel UI 上呈現
 				
