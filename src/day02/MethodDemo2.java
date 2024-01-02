@@ -1,8 +1,8 @@
 package day02;
 
-import static day02.MethodDemo1.calcBmi;
-import static day02.MethodDemo1.getResult;
-import static day02.MethodDemo1.calcBmiAndPrint;
+import static util.BMIUtil.calcBmi;
+import static util.BMIUtil.getResult;
+import static util.BMIUtil.calcBmiAndPrint;
 
 public class MethodDemo2 {
 
