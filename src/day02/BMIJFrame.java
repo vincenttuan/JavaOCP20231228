@@ -4,7 +4,7 @@ package day02;
  視窗版 BMI 計算機
  
  +-----------------+
- |   BMI Computer  |
+ |  BMI Calculator |
  +-----------------+
  |  H(cm): ______  |
  |  W(kg): ______  |
