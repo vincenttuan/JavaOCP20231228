@@ -74,6 +74,10 @@ public class BMIJFrame {
 		femaleButton.setBounds(150, 80, 50, 25);
 		panel.add(femaleButton);
 		
+		// 將男女的 RadioButton 加入到一個群組(ButtonGroup)
+		ButtonGroup sexGroup = new ButtonGroup();
+		sexGroup.add(maleButton);
+		sexGroup.add(femaleButton);
 		
 		// 建立按鈕
 		JButton calculateButton = new JButton("計算 BMI");
