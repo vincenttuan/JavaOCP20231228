@@ -24,7 +24,7 @@ public class BMIJFrame {
 	public static void main(String[] args) {
 		// 建立 JFrame 並設定 title
 		JFrame frame = new JFrame("BMI 計算器");
-		frame.setSize(300, 200); // 視窗大小
+		frame.setSize(300, 220); // 視窗大小
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 按下關閉[X]可以離開程式
 		
 		// 創建一的面板用於放置UI組件
@@ -50,7 +50,7 @@ public class BMIJFrame {
 		heightInput.setBounds(100, 20, 165, 25);
 		panel.add(heightInput);
 		
-		// 建立[身高(cm)]標籤
+		// 建立[體重(kg)]標籤
 		JLabel weightLabel = new JLabel("體重(kg):");
 		weightLabel.setBounds(10, 50, 80, 25); // 設定位置與大小
 		panel.add(weightLabel); // 將標籤配置到面板
@@ -60,14 +60,29 @@ public class BMIJFrame {
 		weightInput.setBounds(100, 50, 165, 25);
 		panel.add(weightInput);
 		
+		// 加入[性別]標籤
+		JLabel sexLabel = new JLabel("性別:");
+		sexLabel.setBounds(10, 80, 100, 25);
+		panel.add(sexLabel);		
+		
+		// 建立男性和女性的單選紐(RadioButton)
+		JRadioButton maleButton = new JRadioButton("男");
+		maleButton.setBounds(100, 80, 50, 25);
+		panel.add(maleButton);
+		
+		JRadioButton femaleButton = new JRadioButton("女");
+		femaleButton.setBounds(150, 80, 50, 25);
+		panel.add(femaleButton);
+		
+		
 		// 建立按鈕
 		JButton calculateButton = new JButton("計算 BMI");
-		calculateButton.setBounds(10, 80, 120, 25);
+		calculateButton.setBounds(10, 110, 120, 25);
 		panel.add(calculateButton);
 		
 		// 建立顯示計算結果的標籤
 		JLabel resultLabel = new JLabel("...");
-		resultLabel.setBounds(10, 110, 200, 25);
+		resultLabel.setBounds(10, 140, 200, 25);
 		panel.add(resultLabel);
 		
 		// 按下 button 後要做的事
