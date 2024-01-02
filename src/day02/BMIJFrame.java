@@ -99,9 +99,10 @@ public class BMIJFrame {
 				// Double.parseDouble() 可以將字串轉 double
 				double h = Double.parseDouble(heightInput.getText());
 				double w = Double.parseDouble(weightInput.getText());
+				String sex = maleButton.isSelected() ? "男" : "女";
 				double bmi = calcBmi(h, w);
 				String result = getResult(bmi);
-				String resultMessage = String.format("%.1f %s", bmi, result);
+				String resultMessage = String.format("%.1f %s %s", bmi, sex, result);
 				resultLabel.setText(resultMessage); // 將結果放到 resultLabel UI 上呈現
 				
 			} catch (Exception e2) {
