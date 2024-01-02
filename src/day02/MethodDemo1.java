@@ -12,6 +12,12 @@ public class MethodDemo1 {
 		double h2 = 160.5;
 		double w2 = 55.1;
 		calcBmiAndPrint(h2, w2);
+		
+		double h3 = 185;
+		double w3 = 60;
+		double bmi3 = calcBmi(h3, w3);
+		String result3 = getResult(bmi3);
+		System.out.printf("%.1f %s%n", bmi3, result3);
 	}
 	
 	// 建立一個可以計算出 bmi 並回傳 bmi值(double) 的方法
