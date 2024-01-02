@@ -72,14 +72,24 @@ public class BMIJFrame {
 		
 		// 按下 button 後要做的事
 		ActionListener actionListener = (e) -> {
-			// heightInput.getText() 會得到字串內容
-			// Double.parseDouble() 可以將字串轉 double
-			double h = Double.parseDouble(heightInput.getText());
-			double w = Double.parseDouble(weightInput.getText());
-			double bmi = calcBmi(h, w);
-			String result = getResult(bmi);
-			String resultMessage = String.format("%.1f %s", bmi, result);
-			resultLabel.setText(resultMessage); // 將結果放到 resultLabel UI 上呈現
+			
+			// 錯誤處理
+			try {
+				
+				// heightInput.getText() 會得到字串內容
+				// Double.parseDouble() 可以將字串轉 double
+				double h = Double.parseDouble(heightInput.getText());
+				double w = Double.parseDouble(weightInput.getText());
+				double bmi = calcBmi(h, w);
+				String result = getResult(bmi);
+				String resultMessage = String.format("%.1f %s", bmi, result);
+				resultLabel.setText(resultMessage); // 將結果放到 resultLabel UI 上呈現
+				
+			} catch (Exception e2) {
+				JOptionPane.showMessageDialog(panel, "請在身高與體重欄位中輸入正確數字");
+			}
+			
+			
 		};
 		
 		// 為按鈕添加監聽事件
