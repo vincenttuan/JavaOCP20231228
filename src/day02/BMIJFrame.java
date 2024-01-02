@@ -81,7 +81,9 @@ public class BMIJFrame {
 			String resultMessage = String.format("%.1f %s", bmi, result);
 			resultLabel.setText(resultMessage); // 將結果放到 resultLabel UI 上呈現
 		};
-				
+		
+		// 為按鈕添加監聽事件
+		calculateButton.addActionListener(actionListener);		
 	}
 }
 
