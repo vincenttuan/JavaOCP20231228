@@ -16,8 +16,9 @@ package day02;
  * */
 
 import javax.swing.*; // 引入 Swing 用於 GUI 介面創建
-import java.awt.event.ActionEvent; // 引入事件處裡(按一下後的事件)
 import java.awt.event.ActionListener; // 引入事件監聽(監聽是否有按一下)
+import static util.BMIUtil.calcBmi;
+import static util.BMIUtil.getResult;
 
 public class BMIJFrame {
 	public static void main(String[] args) {
@@ -68,6 +69,18 @@ public class BMIJFrame {
 		JLabel resultLabel = new JLabel("...");
 		resultLabel.setBounds(10, 110, 200, 25);
 		panel.add(resultLabel);
+		
+		// 按下 button 後要做的事
+		ActionListener actionListener = (e) -> {
+			// heightInput.getText() 會得到字串內容
+			// Double.parseDouble() 可以將字串轉 double
+			double h = Double.parseDouble(heightInput.getText());
+			double w = Double.parseDouble(weightInput.getText());
+			double bmi = calcBmi(h, w);
+			String result = getResult(bmi);
+			String resultMessage = String.format("%.1f %s", bmi, result);
+			resultLabel.setText(resultMessage); // 將結果放到 resultLabel UI 上呈現
+		};
 				
 	}
 }
