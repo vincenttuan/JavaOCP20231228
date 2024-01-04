@@ -10,9 +10,7 @@ public class StringDemo3 {
 	}
 	
 	public static void update(StringBuilder sb) {
-		sb = sb.append("8");
+		sb.append("8");
 	}
-	
-	
 	
 }
