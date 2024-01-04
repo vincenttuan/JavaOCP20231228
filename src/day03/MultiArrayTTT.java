@@ -1,6 +1,7 @@
 package day03;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class MultiArrayTTT {
 	static int count = 0;
@@ -11,15 +12,17 @@ public class MultiArrayTTT {
 	}; 
 	
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
 		// 井字遊戲
-		
 		printTTT();
-		int input = 5;
-		int x = input / 3;
-		int y = input % 3;
-		ttt[x][y] = "O";
-		printTTT();
-
+		for(int i=0;i<9;i++) {
+			System.out.print("請輸入位置[0~8]:");
+			int input = scanner.nextInt();
+			int x = input / 3;
+			int y = input % 3;
+			ttt[x][y] = (i % 2 == 0) ? "O" : "X";
+			printTTT();
+		}
 	}
 	
 	// 將棋盤印出
