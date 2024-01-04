@@ -7,8 +7,9 @@ public class StringDemo5 {
 		StringBuilder sb1 = new StringBuilder("Duke");
         String str1 = sb1.toString();
         // insert code here
-        System.out.print(str1 == str2);
+        System.out.println(str1 == str2);
         
+        System.out.println(str1.equals(str2));
         /*
          Which code fragment, when inserted at line 9, 
          enables the code to print true?
