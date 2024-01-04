@@ -15,12 +15,18 @@ public class MultiArrayTTT {
 		Scanner scanner = new Scanner(System.in);
 		// 井字遊戲
 		printTTT();
-		for(int i=0;i<9;i++) {
+		for(int i=0;i<9;) {
 			System.out.print("請輸入位置[0~8]:");
 			int input = scanner.nextInt();
 			int x = input / 3;
 			int y = input % 3;
-			ttt[x][y] = (i % 2 == 0) ? "O" : "X";
+			// 先檢查 ttt[x][y] 的內容是否是空的 ?
+			if(ttt[x][y].equals(" ")) {
+				ttt[x][y] = (i % 2 == 0) ? "O" : "X";
+				i++; // 重要 !!
+			} else {
+				System.out.printf("位置 %d 不可以選擇%n", input);
+			}
 			printTTT();
 		}
 	}
