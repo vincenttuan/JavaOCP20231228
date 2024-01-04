@@ -3,25 +3,28 @@ package day03;
 import java.util.Arrays;
 
 public class MultiArrayTTT {
-
+	static int count = 0;
+	static String[][] ttt = {
+			{" ", " ", " "},
+			{" ", " ", " "},
+			{" ", " ", " "}
+	}; 
+	
 	public static void main(String[] args) {
 		// 井字遊戲
-		String[][] ttt = {
-				{" ", " ", " "},
-				{" ", " ", " "},
-				{" ", " ", " "}
-		};
-		printTTT(ttt);
+		
+		printTTT();
 		int input = 5;
 		int x = input / 3;
 		int y = input % 3;
 		ttt[x][y] = "O";
-		printTTT(ttt);
+		printTTT();
 
 	}
 	
 	// 將棋盤印出
-	public static void printTTT(String[][] ttt) {
+	public static void printTTT() {
+		System.out.println(++count);
 		System.out.println("+-----------+");
 		System.out.println("| " + ttt[0][0] + " | " + ttt[0][1] + " | " + ttt[0][2] + " |");
 		System.out.println("+---+---+---+");
