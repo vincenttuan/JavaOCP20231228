@@ -17,6 +17,10 @@ public class MultiArrayDemo2 {
 		n 與 m 個要放多少
 		可以讓 O 賓果 ?
 		*/
+		
+		System.out.println(Arrays.toString(ttt[0]));
+		System.out.println(Arrays.toString(ttt[1]));
+		System.out.println(Arrays.toString(ttt[2]));
 	}
 
 }
