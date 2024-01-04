@@ -26,8 +26,31 @@ public class MultiArrayTTT {
 				i++; // 重要 !!
 			} else {
 				System.out.printf("位置 %d 不可以選擇%n", input);
+				continue;
 			}
 			printTTT();
+			// 賓果判斷
+			if((ttt[0][0]+ttt[1][1]+ttt[2][2]).equals("OOO") ||
+				(ttt[0][0]+ttt[1][0]+ttt[2][0]).equals("OOO") ||
+				(ttt[0][1]+ttt[1][1]+ttt[2][1]).equals("OOO")||
+				(ttt[0][2]+ttt[1][2]+ttt[2][2]).equals("OOO")||
+				(ttt[0][0]+ttt[0][1]+ttt[0][2]).equals("OOO")||
+				(ttt[1][0]+ttt[1][1]+ttt[1][2]).equals("OOO")||
+				(ttt[2][0]+ttt[2][1]+ttt[2][2]).equals("OOO")||
+				(ttt[0][2]+ttt[1][1]+ttt[2][0]).equals("OOO")) {
+				System.out.println("O 獲勝");
+				break;
+			} else if((ttt[0][0]+ttt[1][1]+ttt[2][2]).equals("XXX") ||
+					(ttt[0][0]+ttt[1][0]+ttt[2][0]).equals("XXX") ||
+					(ttt[0][1]+ttt[1][1]+ttt[2][1]).equals("XXX")||
+					(ttt[0][2]+ttt[1][2]+ttt[2][2]).equals("XXX")||
+					(ttt[0][0]+ttt[0][1]+ttt[0][2]).equals("XXX")||
+					(ttt[1][0]+ttt[1][1]+ttt[1][2]).equals("XXX")||
+					(ttt[2][0]+ttt[2][1]+ttt[2][2]).equals("XXX")||
+					(ttt[0][2]+ttt[1][1]+ttt[2][0]).equals("XXX")) {
+					System.out.println("X 獲勝");
+					break;
+				} 
 		}
 	}
 	
