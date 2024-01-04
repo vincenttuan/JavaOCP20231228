@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class MultiArrayTTT {
+	static String winner;
 	static int count = 0;
 	static String[][] ttt = {
 			{" ", " ", " "},
@@ -38,7 +39,7 @@ public class MultiArrayTTT {
 				(ttt[1][0]+ttt[1][1]+ttt[1][2]).equals("OOO")||
 				(ttt[2][0]+ttt[2][1]+ttt[2][2]).equals("OOO")||
 				(ttt[0][2]+ttt[1][1]+ttt[2][0]).equals("OOO")) {
-				System.out.println("O 獲勝");
+				winner = "O";
 				break;
 			} else if((ttt[0][0]+ttt[1][1]+ttt[2][2]).equals("XXX") ||
 					(ttt[0][0]+ttt[1][0]+ttt[2][0]).equals("XXX") ||
@@ -48,9 +49,15 @@ public class MultiArrayTTT {
 					(ttt[1][0]+ttt[1][1]+ttt[1][2]).equals("XXX")||
 					(ttt[2][0]+ttt[2][1]+ttt[2][2]).equals("XXX")||
 					(ttt[0][2]+ttt[1][1]+ttt[2][0]).equals("XXX")) {
-					System.out.println("X 獲勝");
+					winner = "X";
 					break;
 				} 
+		}
+		
+		if(winner == null) {
+			System.out.println("和局");
+		} else {
+			System.out.printf("%s 獲勝%n", winner);
 		}
 	}
 	
