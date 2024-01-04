@@ -21,6 +21,7 @@ public class MultiArrayDemo2 {
 		System.out.println(Arrays.toString(ttt[0]));
 		System.out.println(Arrays.toString(ttt[1]));
 		System.out.println(Arrays.toString(ttt[2]));
+		
 	}
 
 }
