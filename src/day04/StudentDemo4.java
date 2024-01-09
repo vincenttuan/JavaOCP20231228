@@ -1,7 +1,7 @@
 package day04;
 
 import java.util.Arrays;
-import java.util.Comparator;
+import static java.util.Comparator.comparingInt;
 import java.util.Optional;
 
 public class StudentDemo4 {
@@ -34,10 +34,11 @@ public class StudentDemo4 {
 		System.out.printf("最低分: %d 姓名: %s%n", lowScoreStudent.score, lowScoreStudent.name);
 		
 		// java 8 stream 的寫法
-		Optional<Student> maxStudentOpt = Arrays.stream(students).max(Comparator.comparingInt(student -> student.score));
+		Optional<Student> maxStudentOpt = Arrays.stream(students).max(comparingInt(student -> student.score));
 		maxStudentOpt.ifPresent(student -> System.out.printf("最高分: %d 姓名: %s%n", student.score, student.name));
 		
-		
+		Optional<Student> minStudentOpt = Arrays.stream(students).min(comparingInt(student -> student.score));
+		minStudentOpt.ifPresent(student -> System.out.printf("最低分: %d 姓名: %s%n", student.score, student.name));
 		
 	}
 }
