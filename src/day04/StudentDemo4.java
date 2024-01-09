@@ -10,6 +10,16 @@ public class StudentDemo4 {
 		
 		Student[] students = {student1, student2, student3, student4, student5};
 		// 請將最高分與最低分的人名與分數列出
+		// 利用替換法
+		// 假設最高分的學生是 students[0]
+		Student hightScoreStudent = students[0];
+		for(int i=1;i<students.length;i++) {
+			if(students[i].score > hightScoreStudent.score) {
+				hightScoreStudent = students[i];
+			}
+		}
+		System.out.printf("最高分: %d 姓名: %s%n", hightScoreStudent.score, hightScoreStudent.name);
+		
 		
 	}
 }
