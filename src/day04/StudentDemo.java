@@ -17,12 +17,18 @@ public class StudentDemo {
 		student2.score = 70;
 		student2.sex = 2;
 		
-		// 將學生資料呈現出來
-		System.out.printf("學生姓名: %s 成績: %d 性別: %s%n", 
-				student1.name, student1.score, student1.sex == 1 ? "男": "女");
+		// 再建立一個學生物件
+		Student student3 = new Student();
 		
-		System.out.printf("學生姓名: %s 成績: %d 性別: %s%n", 
-				student2.name, student2.score, student2.sex == 1 ? "男": "女");
+		// 將學生資料呈現出來
+		System.out.printf("學生姓名: %s 成績: %d 性別: %d%n", 
+				student1.name, student1.score, student1.sex);
+		
+		System.out.printf("學生姓名: %s 成績: %d 性別: %d%n", 
+				student2.name, student2.score, student2.sex);
+		
+		System.out.printf("學生姓名: %s 成績: %d 性別: %d%n", 
+				student3.name, student3.score, student3.sex);
 	
 	}
 
