@@ -1,5 +1,9 @@
 package day04;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Optional;
+
 public class StudentDemo4 {
 	public static void main(String[] args) {
 		Student student1 = new Student("John", 80, 1);
@@ -19,6 +23,7 @@ public class StudentDemo4 {
 			}
 		}
 		System.out.printf("最高分: %d 姓名: %s%n", hightScoreStudent.score, hightScoreStudent.name);
+		
 		// for-each/for-in: 假設最低分的學生是 students[0]
 		Student lowScoreStudent = students[0];
 		for(Student student : students) {
@@ -27,6 +32,12 @@ public class StudentDemo4 {
 			}
 		}
 		System.out.printf("最低分: %d 姓名: %s%n", lowScoreStudent.score, lowScoreStudent.name);
+		
+		// java 8 stream 的寫法
+		Optional<Student> maxStudentOpt = Arrays.stream(students).max(Comparator.comparingInt(student -> student.score));
+		maxStudentOpt.ifPresent(student -> System.out.printf("最高分: %d 姓名: %s%n", student.score, student.name));
+		
+		
 		
 	}
 }
