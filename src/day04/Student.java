@@ -1,7 +1,7 @@
 package day04;
 
 public class Student { // 學生類別
-	String name = "有名氏";; // 學生姓名(物件屬性/物件變數/物件欄位/物件成員/物件資產/物件狀態)
+	String name; // 學生姓名(物件屬性/物件變數/物件欄位/物件成員/物件資產/物件狀態)
 	int score;   // 學生成績(物件屬性/物件變數/物件欄位/物件成員/物件資產/物件狀態)
 	int sex;     // 學生性別(物件屬性/物件變數/物件欄位/物件成員/物件資產/物件狀態)
 	
@@ -12,5 +12,13 @@ public class Student { // 學生類別
 		this.name = "無名氏";
 		this.score = -1;
 		this.sex = -1;
+	}
+	
+	// 建構子(有參數)
+	public Student(String name, int score, int sex) {
+		// 注入指定初始資訊
+		this.name = name;
+		this.score = score;
+		this.sex = sex;
 	}
 }

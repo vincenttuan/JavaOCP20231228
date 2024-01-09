@@ -20,6 +20,9 @@ public class StudentDemo {
 		// 再建立一個學生物件
 		Student student3 = new Student();
 		
+		// 再建立一個學生物件
+		Student student4 = new Student("Rose", 90, 2);
+		
 		// 將學生資料呈現出來
 		System.out.printf("學生姓名: %s 成績: %d 性別: %d%n", 
 				student1.name, student1.score, student1.sex);
@@ -29,6 +32,9 @@ public class StudentDemo {
 		
 		System.out.printf("學生姓名: %s 成績: %d 性別: %d%n", 
 				student3.name, student3.score, student3.sex);
+	
+		System.out.printf("學生姓名: %s 成績: %d 性別: %d%n", 
+				student4.name, student4.score, student4.sex);
 	
 	}
 
