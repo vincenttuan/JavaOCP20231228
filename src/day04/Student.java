@@ -21,4 +21,11 @@ public class Student { // 學生類別
 		this.score = score;
 		this.sex = sex;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("學生姓名: %s 成績: %d 性別: %d", 
+				this.name, this.score, this.sex);
+	}
+	
 }

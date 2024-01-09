@@ -23,7 +23,7 @@ public class StudentDemo {
 		// 再建立一個學生物件
 		Student student4 = new Student("Rose", 90, 2);
 		
-		// 將學生資料呈現出來
+		// 將學生資料呈現出來 I
 		System.out.printf("學生姓名: %s 成績: %d 性別: %d%n", 
 				student1.name, student1.score, student1.sex);
 		
@@ -35,7 +35,13 @@ public class StudentDemo {
 	
 		System.out.printf("學生姓名: %s 成績: %d 性別: %d%n", 
 				student4.name, student4.score, student4.sex);
-	
+		
+		// 將學生資料呈現出來 II
+		System.out.println(student1); // student1.toString();
+		System.out.println(student2); // student2.toString();
+		System.out.println(student3); // student3.toString();
+		System.out.println(student4); // student4.toString();
+		
 	}
 
 }
