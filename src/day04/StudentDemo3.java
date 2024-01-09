@@ -20,11 +20,16 @@ public class StudentDemo3 {
 			}
 		}
 		*/
+		/*
 		for(Student student : students) {
 			if(student.score >= 60) {
 				student.score += 5;
 			}
 		}
+		*/
+		Arrays.stream(students)
+				.filter(student -> student.score >= 60)
+				.forEach(student -> student.score += 5);
 		
 		System.out.println("有加分之後: " + Arrays.toString(students));
 	}
