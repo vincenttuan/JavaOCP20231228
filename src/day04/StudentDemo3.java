@@ -13,6 +13,18 @@ public class StudentDemo3 {
 		Student[] students = {student1, student2, student3, student4, student5};
 		System.out.println("未加分之前: " + Arrays.toString(students));
 		// 及格的要 +5 分
+		/*
+		for(int i=0;i<students.length;i++) {
+			if(students[i].score >= 60) {
+				students[i].score += 5; // students[i].score = students[i].score + 5;
+			}
+		}
+		*/
+		for(Student student : students) {
+			if(student.score >= 60) {
+				student.score += 5;
+			}
+		}
 		
 		System.out.println("有加分之後: " + Arrays.toString(students));
 	}
