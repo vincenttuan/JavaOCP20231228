@@ -1,0 +1,23 @@
+題目描述
+假設你是一名軟體開發者，被任務來設計一個簡單的3C商品銷售系統，
+這個系統需要處理不同種類的電子產品，如"智能手機"、"智能電視"等。
+每個"產品"都有其"品牌"和"型號"信息，並且某些產品具有特殊功能，如"可充電"和/或能夠"連接WiFi"。
+
+需求
+定義一個ElectronicProduct接口，其中應該包括sell()和display()方法。
+定義一個Rechargeable接口，其中包括recharge()方法來表示產品可以被充電。
+定義一個WiFiEnabled接口，其中包括connectToWiFi(String network)方法來表示產品可以連接到WiFi。
+創建一個抽象類別BaseProduct，實現ElectronicProduct接口，並提供"品牌"和"型號"的基本屬性和構造方法。
+display()方法應該在這個抽象類別中實現。
+定義兩個具體類別Smartphone和SmartTV，它們都繼承自BaseProduct。
+Smartphone應該實現Rechargeable和WiFiEnabled接口，而SmartTV僅需實現WiFiEnabled接口。
+每個具體類別應該實現sell()方法，並且根據其特性實現其他接口中的方法。
+
+任務
+使用上述定義，實現所有的接口和類別。
+創建一個主類別ElectronicsShop，在其main方法中創建Smartphone和SmartTV的實例，並調用它們的方法來展示如何銷售、展示、充電（如果可充電）以及連接WiFi（如果支持）。
+
+提示
+注意接口和抽象類別的區別及用法。
+仔細考慮每個類別應該如何實現接口中定義的方法。
+在主類別中測試所有功能以確保實現的正確性。
