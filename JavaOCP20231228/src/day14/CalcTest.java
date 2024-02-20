@@ -39,7 +39,6 @@ public class CalcTest {
 		// 利用 Lambda 5
 		Calc add5 = (x, y) -> x + y; 
 		System.out.println(add5.compute(10, 20));
-				
 		
 	}
 }
