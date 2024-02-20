@@ -77,6 +77,13 @@ public class Family {
 		entertainment1.activity();
 		entertainment2.activity();
 		entertainment3.activity();
-	} 
+	}
+	
+	// 靜態內部類 - 愛
+	static class Love {
+		public static void printMessage() {
+			System.out.println("有上帝祝福的愛~");
+		}
+	}
 	
 }
