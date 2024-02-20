@@ -25,10 +25,10 @@ public class Family {
 		}
 	}
 	
-	// 方法內部類別
+	// 買車子
 	public void buyCar(String name) {
 		// 車子
-		class Car {
+		class Car { // 方法內部類別
 			private String brandName;
 			
 			Car(String brandName) {
