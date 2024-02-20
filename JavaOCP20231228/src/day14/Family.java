@@ -49,24 +49,34 @@ public class Family {
 		void activity(); // 活動
 	}
 	
+	class PlayWithBalls implements Entertainment {
+		@Override
+		public void activity() {
+			System.out.println("家庭日-玩球活動");
+		}
+	}
+	
 	// 家庭日方法
 	public void familyDay() {
-		Entertainment entertainment1 = new Entertainment() {
+		Entertainment entertainment1 = new Entertainment() { // 匿名內部類別
 			@Override
 			public void activity() {
 				System.out.println("家庭日-烤肉活動");
 			}
 		};
 		
-		Entertainment entertainment2 = new Entertainment() {
+		Entertainment entertainment2 = new Entertainment() { // 匿名內部類別
 			@Override
 			public void activity() {
 				System.out.println("家庭日-騎單車活動");
 			}
 		};
 		
+		Entertainment entertainment3 = new PlayWithBalls(); 
+		
 		entertainment1.activity();
 		entertainment2.activity();
+		entertainment3.activity();
 	} 
 	
 }
