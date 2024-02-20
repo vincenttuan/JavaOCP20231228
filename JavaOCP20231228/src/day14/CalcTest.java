@@ -2,7 +2,7 @@ package day14;
 
 public class CalcTest {
 	public static void main(String[] args) {
-		// 實作 Calc 的介面-加法運算
+		// 實作 Calc 的介面-加法運算: 透過匿名內部類別
 		Calc add1 = new Calc() {
 			@Override
 			public int compute(int x, int y) {
@@ -11,6 +11,14 @@ public class CalcTest {
 			}
 		};
 		System.out.println(add1.compute(10, 20));
+		
+		// 利用 Lambda 1
+		Calc add2 = (int x, int y) -> {
+			int result = x + y;
+			return result;
+		};
+		System.out.println(add2.compute(10, 20));
+		
 		
 	}
 }
