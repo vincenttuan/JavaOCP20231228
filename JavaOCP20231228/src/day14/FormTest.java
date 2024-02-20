@@ -1,7 +1,5 @@
 package day14;
 
-import day14.Form.ButtonA;
-
 public class FormTest {
 
 	public static void main(String[] args) {
@@ -17,6 +15,9 @@ public class FormTest {
 		Form.ButtonB buttonB = form.new ButtonB();
 		buttonB.onClick();
 		buttonB.onClick();
+		
+		Form.ButtonC buttonC = new Form.ButtonC();
+		buttonC.displayCount(); 
 	}
 
 }
