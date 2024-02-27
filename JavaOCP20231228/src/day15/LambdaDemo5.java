@@ -36,6 +36,7 @@ public class LambdaDemo5 {
 		Arrays.stream(scores)
 		  	  .filter(fail)
 		  	  .forEach(display);
+		
 	}
 
 }
