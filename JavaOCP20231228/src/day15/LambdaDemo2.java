@@ -27,6 +27,13 @@ public class LambdaDemo2 {
 		
 		Integer[] radius = {10, 15, 7, 2};
 		// 請分別計算圓面積與球體積
+		for(Integer r : radius) {
+			Double area1 = calcArea.apply(r);
+			Double volume1 = calcVolume.apply(r);
+			//System.out.printf("半徑: %d 圓面積: %.2f 球體積: %.2f%n", r, area1, volume1);
+			//System.out.printf("半徑: %02d 圓面積: %06.2f 球體積: %08.2f%n", r, area1, volume1);
+			System.out.printf("半徑: %2d 圓面積: %6.2f 球體積: %8.2f%n", r, area1, volume1);
+		}
 		
 	}
 }
