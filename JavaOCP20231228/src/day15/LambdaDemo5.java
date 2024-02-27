@@ -1,6 +1,8 @@
 package day15;
 
 import java.util.Arrays;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class LambdaDemo5 {
 
@@ -27,6 +29,13 @@ public class LambdaDemo5 {
 			  .forEach(x -> System.out.println(x));
 		
 		
+		// 印出及格的分數 part III
+		Predicate<Integer> pass = (x) -> x >= 60;
+		Predicate<Integer> fail = (x) -> x < 60;
+		Consumer<Integer> display = (x) -> System.out.println(x);
+		Arrays.stream(scores)
+		  	  .filter(fail)
+		  	  .forEach(display);
 	}
 
 }
