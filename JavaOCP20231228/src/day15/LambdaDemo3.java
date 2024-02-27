@@ -23,7 +23,12 @@ public class LambdaDemo3 {
 		
 		String[] names = {"Jo", "Vincent", "Anita", "Baby", "Howard", "Joanna"};
 		// 請寫一個 Predicate 並可以將名字長度 > 4 的名字印出
-		
+		Predicate<String> nameLength = (name) -> name.length() > 4;
+		for(String name : names) {
+			if(nameLength.test(name)) {
+				System.out.println(name);
+			}
+		}
 	}
 
 }
