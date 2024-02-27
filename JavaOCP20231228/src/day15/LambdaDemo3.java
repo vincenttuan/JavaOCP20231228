@@ -20,7 +20,10 @@ public class LambdaDemo3 {
 		Predicate<String> idSex = (id) -> id.charAt(1) == '1';
 		System.out.println(idSex.test("A123456789"));
 		System.out.println(idSex.test("H223456789"));
-
+		
+		String[] names = {"Jo", "Vincent", "Anita", "Baby", "Howard", "Joanna"};
+		// 請寫一個 Predicate 並可以將名字長度 > 4 的名字印出
+		
 	}
 
 }
