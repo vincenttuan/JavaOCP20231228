@@ -17,6 +17,9 @@ public class LambdaDemo3 {
 		System.out.println(pass.test(45));
 		System.out.println(pass.test(85));
 		
+		Predicate<String> idSex = (id) -> id.charAt(1) == '1';
+		System.out.println(idSex.test("A123456789"));
+		System.out.println(idSex.test("H223456789"));
 
 	}
 
