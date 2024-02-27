@@ -13,7 +13,7 @@ public class LambdaDemo1 {
 			}	
 		*/
 		
-		Consumer<String> hello = (t) -> System.out.println("Hello " + t);
+		Consumer<String> hello = (t) -> System.out.println("哈囉 " + t);
 		Consumer<Integer> calc = (t) -> System.out.println(t + t);
 		Consumer test = (t) -> System.out.println(t);
 		
@@ -21,6 +21,11 @@ public class LambdaDemo1 {
 		calc.accept(10);
 		test.accept("abc");
 		test.accept(10);
+		
+		String[] names = {"John", "Bob", "Mary", "Jack", "Rose"};
+		for(String name : names) {
+			hello.accept(name);
+		}
 		
 	}
 
