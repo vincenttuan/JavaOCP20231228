@@ -1,5 +1,7 @@
 package day15;
 
+import java.util.Arrays;
+
 public class LambdaDemo6 {
 	public static void main(String[] args) {
 		// 混用 Function, Predicate, Consumer
@@ -15,6 +17,11 @@ public class LambdaDemo6 {
 			}
 		}
 		
+		// 用 stream
+		Arrays.stream(scores)
+			  .map(x -> Integer.parseInt(x))        // 轉換 map(Function)
+			  .filter(x -> x >= 60)                 // 過濾 filter(Predicate)
+			  .forEach(x -> System.out.println(x)); // 逐項 forEach(Consumer)
 		
 		
 	}
