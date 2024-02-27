@@ -12,12 +12,20 @@ public class LambdaDemo5 {
 		// 將 Integer[] 陣列透過 Arrays.stream() 轉串流
 		//Arrays.stream(scores).forEach(x -> System.out.println(x));
 		
-		// 印出及格的分數
+		// 印出及格的分數 part I
+		/*
 		Arrays.stream(scores).forEach(x -> {
 			if(x >= 60) {
 				System.out.println(x);
 			}
 		});
+		*/
+		
+		// 印出及格的分數 part II
+		Arrays.stream(scores)
+			  .filter(x -> x >= 60)
+			  .forEach(x -> System.out.println(x));
+		
 		
 	}
 
