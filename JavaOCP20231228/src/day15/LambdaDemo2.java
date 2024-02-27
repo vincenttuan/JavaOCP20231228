@@ -25,6 +25,8 @@ public class LambdaDemo2 {
 		Double volume = calcVolume.apply(10);
 		System.out.println(volume);
 		
+		Integer[] radius = {10, 15, 7, 2};
+		// 請分別計算圓面積與球體積
 		
 	}
 }
