@@ -25,7 +25,7 @@ public class SetDemo3 {
 		System.out.println(total);
 		
 		// 請計算總分-使用 stream (暴力法)
-		int total2 = set.stream().mapToInt(data -> Integer.parseInt(data + "")).sum();
+		int total2 = set.stream().filter(data -> data != null).mapToInt(data -> Integer.parseInt(data + "")).sum();
 		System.out.println(total2);
 	}
 
