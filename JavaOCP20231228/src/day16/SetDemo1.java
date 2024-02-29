@@ -18,6 +18,7 @@ public class SetDemo1 {
 		set.add("韓");
 		set.add(65);
 		System.out.println(set);
+		System.out.println(set.size()); // 集合元素個數
 	}
 
 }
