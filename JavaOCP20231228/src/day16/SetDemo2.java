@@ -29,8 +29,16 @@ public class SetDemo2 {
 			}
 		}
 		// 計算總分
+		int total = 0;
+		for(Object data : set) {
+			if(data instanceof Integer) {
+				total += (Integer)data;
+			}
+		}
+		System.out.println("總分:" + total);
+		// 計算總分 使用 stream
 		
-
+		
 	}
 
 }
