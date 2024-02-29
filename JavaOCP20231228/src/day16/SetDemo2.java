@@ -51,6 +51,12 @@ public class SetDemo2 {
 						.sum();
 		System.out.println("總分:" + total2);   
 		   
+		int total3 = set.stream() // [國, 100, 英, 70, 日, 80, 韓, 65] Object(String+Integer) 串流
+						.filter(data -> data instanceof Integer) // [100, 70, 80, 65] // Object(Integer) 串流
+						//.mapToInt(data -> ((Integer)data).intValue()) // int 串流
+						.mapToInt(data -> (Integer)data) // int 串流
+						.sum();
+		System.out.println("總分:" + total3);
 		
 	}
 
