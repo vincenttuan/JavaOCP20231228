@@ -26,7 +26,7 @@ public class SetDemo1 {
 		}
 		
 		// 走訪元素, 並逐一印出元素
-		Iterator iter = set.iterator();
+		Iterator iter = set.iterator(); // 利用集合自己的走訪器來尋訪元素內容
 		while (iter.hasNext()) { // 判斷以下是否還有元素
 			Object data = iter.next(); // 取得元素
 			System.out.println(data);
