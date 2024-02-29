@@ -1,6 +1,7 @@
 package day16;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -21,6 +22,13 @@ public class SetDemo1 {
 		System.out.println(set.size()); // 集合元素個數
 		// 走訪元素, 並逐一印出元素
 		for(Object data : set) {
+			System.out.println(data);
+		}
+		
+		// 走訪元素, 並逐一印出元素
+		Iterator iter = set.iterator();
+		while (iter.hasNext()) { // 判斷以下是否還有元素
+			Object data = iter.next(); // 取得元素
 			System.out.println(data);
 		}
 	}
