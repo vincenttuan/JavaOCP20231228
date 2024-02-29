@@ -2,6 +2,8 @@ package day16;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.function.Function;
+import java.util.function.ToIntFunction;
 
 public class SetDemo2 {
 
@@ -37,7 +39,18 @@ public class SetDemo2 {
 		}
 		System.out.println("總分:" + total);
 		// 計算總分 使用 stream
+		// [國, 100, 英, 70, 日, 80, 韓, 65] Object 串流
+		// 過濾元素 Integer
+		// [100, 70, 80, 65] // Object 串流
+		// 轉換元素 int
+		// [100, 70, 80, 65] // int 串流
 		
+		int total2 = set.stream() // [國, 100, 英, 70, 日, 80, 韓, 65] Object(String+Integer) 串流
+						.filter(data -> data instanceof Integer) // [100, 70, 80, 65] // Object(Integer) 串流
+						.mapToInt(data -> Integer.parseInt(data.toString()))
+						.sum();
+		System.out.println("總分:" + total2);   
+		   
 		
 	}
 
