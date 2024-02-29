@@ -13,7 +13,15 @@ public class SetDemo3 {
 		set.add("80"); // String
 		System.out.println(set);
 		// 請計算總分
-
+		int total = 0;
+		for(Object data : set) {
+			if(data instanceof String) {
+				total += Integer.parseInt(data.toString());
+			} else if(data instanceof Integer) {
+				total += (Integer)data; //相當於 total += ((Integer)data).intValue();
+			}
+		}
+		System.out.println(total);
 	}
 
 }
