@@ -19,6 +19,10 @@ public class SetDemo1 {
 		set.add(65);
 		System.out.println(set);
 		System.out.println(set.size()); // 集合元素個數
+		// 走訪元素, 並逐一印出元素
+		for(Object data : set) {
+			System.out.println(data);
+		}
 	}
 
 }
