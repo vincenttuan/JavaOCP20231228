@@ -16,7 +16,7 @@ public class SetDemo2 {
 		set.add("韓");
 		set.add(65);
 		System.out.println(set);
-		// 計算總分
+		
 		// 印出元素內容與資料型別
 		for(Object data : set) {
 			System.out.println(data + ", " + data.getClass().getSimpleName());
@@ -28,6 +28,7 @@ public class SetDemo2 {
 				System.out.println(data + ", " + data.getClass().getSimpleName());
 			}
 		}
+		// 計算總分
 		
 
 	}
