@@ -19,6 +19,11 @@ public class SetDemo7 {
 		weights.add(62.0);weights.add(57.0);weights.add(58.0);weights.add(63.0);weights.add(64.0);
 		System.out.println(heights);
 		System.out.println(weights);
+		double heightCV = getCV(heights);
+		double weightCV = getCV(weights);
+		System.out.printf("身高的變異係數: %.3f%n", heightCV);
+		System.out.printf("體重的變異係數: %.3f%n", weightCV);
+		
 	}
 	
 	// 取得平均
