@@ -21,16 +21,29 @@ public class SetDemo7 {
 		System.out.println(weights);
 	}
 	
+	// 取得平均
+	private static double getAvg(Set<Double> values) {
+		//double avg = values.stream().mapToDouble(value -> value.doubleValue()).average().getAsDouble(); 
+		double avg = values.stream().mapToDouble(Double::doubleValue).average().getAsDouble();
+		return avg;
+	}
+	
 	// 取得標準差
 	private static double getSD(Set<Double> values) {
 		int n = values.size();
-		//double avg = values.stream().mapToDouble(value -> value.doubleValue()).average().getAsDouble(); 
-		double avg = values.stream().mapToDouble(Double::doubleValue).average().getAsDouble();
+		double avg = getAvg(values);
 		double sum = values.stream().mapToDouble(value -> Math.pow(value - avg, 2)).sum();
 		double sd = Math.sqrt(sum / n);
 		return sd;
 	}
 	
+	// 取得變異係數
+	private static double getCV(Set<Double> values) {
+		double sd = getSD(values);
+		double avg = getAvg(values);
+		double cv = sd / avg;
+		return cv;
+	}
 	
 
 }
