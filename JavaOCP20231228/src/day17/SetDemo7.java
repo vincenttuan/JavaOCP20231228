@@ -23,7 +23,9 @@ public class SetDemo7 {
 		double weightCV = getCV(weights);
 		System.out.printf("身高的變異係數: %.3f%n", heightCV);
 		System.out.printf("體重的變異係數: %.3f%n", weightCV);
-		
+		// 哪一個分散程度大
+		String result = heightCV > weightCV ? "身高" : "體重";
+		System.out.printf("%s 分散程度大%n", result);
 	}
 	
 	// 取得平均
