@@ -22,6 +22,15 @@ public class SetDemo6 {
 		System.out.println(students);
 		
 		// 請計算出全班總成績與男女各別的總成績
+		//int sumTotal = students.stream().mapToInt(student -> student.getScore()).sum();
+		int sumTotal = students.stream().mapToInt(Student::getScore).sum();
+		System.out.println(sumTotal);
+		
+		int sumMan = students.stream().filter(student -> student.getGender() == 'M') .mapToInt(Student::getScore).sum();
+		System.out.println(sumMan);
+		
+		int sumFemale = students.stream().filter(student -> student.getGender() == 'F') .mapToInt(Student::getScore).sum();
+		System.out.println(sumFemale);
 		
 	}
 
