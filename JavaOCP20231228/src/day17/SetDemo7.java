@@ -1,10 +1,7 @@
 package day17;
 
-import java.net.Socket;
 import java.util.LinkedHashSet;
 import java.util.Set;
-
-import javax.sound.midi.Soundbank;
 
 /**
 調查五位學生之身高及體重如下，試比較其分散程度。
