@@ -28,8 +28,15 @@ public class SetDemo4 {
 		}
 		System.out.println(sum2);
 		
+		// 利用 java 8 stream
+		int sum3 = set.stream().mapToInt(data -> data.intValue()).sum();
+		System.out.println(sum3);
 		
+		int sum4 = set.stream().mapToInt(data -> data).sum(); // 利用 Java 5.0 autoUnboxing 的特性 (Integer 轉 int). data -> data.intValue() 
+		System.out.println(sum4);
 		
+		int sum5 = set.stream().mapToInt(Integer::intValue).sum(); // 利用 Java 8 方法參考
+		System.out.println(sum5);
 
 	}
 
