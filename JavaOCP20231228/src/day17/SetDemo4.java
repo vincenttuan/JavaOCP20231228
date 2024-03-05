@@ -1,5 +1,6 @@
 package day17;
 
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -19,6 +20,13 @@ public class SetDemo4 {
 			sum += data;
 		}
 		System.out.println(sum);
+		
+		Iterator<Integer> iter = set.iterator(); // 集合內建的走訪器
+		int sum2 = 0;
+		while (iter.hasNext()) {
+			sum2 += iter.next();
+		}
+		System.out.println(sum2);
 		
 		
 		
