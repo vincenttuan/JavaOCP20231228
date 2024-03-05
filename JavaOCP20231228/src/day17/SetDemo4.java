@@ -37,6 +37,9 @@ public class SetDemo4 {
 		
 		int sum5 = set.stream().mapToInt(Integer::intValue).sum(); // 利用 Java 8 方法參考
 		System.out.println(sum5);
+		
+		long sum6 = set.stream().mapToInt(Integer::intValue).summaryStatistics().getSum();
+		System.out.println(sum6);
 
 	}
 
