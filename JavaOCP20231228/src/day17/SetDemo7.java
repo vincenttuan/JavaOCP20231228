@@ -20,5 +20,17 @@ public class SetDemo7 {
 		System.out.println(heights);
 		System.out.println(weights);
 	}
+	
+	// 取得標準差
+	private static double getSD(Set<Double> values) {
+		int n = values.size();
+		//double avg = values.stream().mapToDouble(value -> value.doubleValue()).average().getAsDouble(); 
+		double avg = values.stream().mapToDouble(Double::doubleValue).average().getAsDouble();
+		double sum = values.stream().mapToDouble(value -> Math.pow(value - avg, 2)).sum();
+		double sd = Math.sqrt(sum / n);
+		return sd;
+	}
+	
+	
 
 }
