@@ -2,7 +2,7 @@ package day18;
 
 import java.util.Objects;
 
-public class Drink {
+public class Drink implements Comparable<Drink> {
 	private String name;
 	private Integer price;
 	
@@ -51,6 +51,11 @@ public class Drink {
 			return false;
 		Drink other = (Drink) obj;
 		return Objects.equals(name, other.name) && Objects.equals(price, other.price);
+	}
+
+	@Override
+	public int compareTo(Drink o) {
+		return this.price - o.price;
 	}
 	
 	
