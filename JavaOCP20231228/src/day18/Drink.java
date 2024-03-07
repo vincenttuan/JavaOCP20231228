@@ -1,5 +1,7 @@
 package day18;
 
+import java.util.Objects;
+
 public class Drink {
 	private String name;
 	private Integer price;
@@ -36,6 +38,26 @@ public class Drink {
 
 	@Override
 	public int hashCode() {
+		return Objects.hash(name, price);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Drink other = (Drink) obj;
+		return Objects.equals(name, other.name) && Objects.equals(price, other.price);
+	}
+	
+	
+	
+	/*
+	@Override
+	public int hashCode() {
 		return 7 * 17 * (name.hashCode() + price);
 	}
 
@@ -57,7 +79,7 @@ public class Drink {
 			return false;
 		}
 	}
-	
+	*/
 	
 	
 }
