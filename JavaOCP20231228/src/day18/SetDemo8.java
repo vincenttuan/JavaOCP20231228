@@ -21,6 +21,9 @@ public class SetDemo8 {
 		// 請問此系列有幾種飲料 ?
 		System.out.printf("系列有幾種飲料: %d%n", drinks.size());
 		
+		// 列出此系列所有飲料 ?
+		System.out.println(drinks);
+		
 	}
 
 }
