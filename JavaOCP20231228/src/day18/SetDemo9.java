@@ -15,6 +15,7 @@ public class SetDemo9 {
 		System.out.println(set);
 		
 		// 有一系列的飲料
+		Drink.SORT = 1;
 		Set<Drink> drinks = new TreeSet<>();
 		drinks.add(new Drink("Coffee", 65));
 		drinks.add(new Drink("Tea", 20));

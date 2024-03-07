@@ -3,6 +3,8 @@ package day18;
 import java.util.Objects;
 
 public class Drink implements Comparable<Drink> {
+	public static int SORT = 1; // 1: 小到大, -1: 大到小  
+	
 	private String name;
 	private Integer price;
 	
@@ -55,7 +57,7 @@ public class Drink implements Comparable<Drink> {
 
 	@Override
 	public int compareTo(Drink o) {
-		return this.price - o.price;
+		return (this.price - o.price) * SORT;
 	}
 	
 	
