@@ -12,7 +12,7 @@ public class SetDemo9 {
 		set.add(100);
 		set.add(80);
 		System.out.println(set);
-
+		
 	}
 
 }
