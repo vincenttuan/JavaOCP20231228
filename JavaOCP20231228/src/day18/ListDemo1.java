@@ -22,5 +22,12 @@ public class ListDemo1 {
 			Integer value = iter.next();
 			System.out.printf("%d: %d%n", idx, value);
 		}
+		
+		while (iter.hasPrevious()) {
+			int idx = iter.previousIndex();
+			Integer value = iter.previous();
+			System.out.printf("%d: %d%n", idx, value);
+		}
+		
 	}
 }
