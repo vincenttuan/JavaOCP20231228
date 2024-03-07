@@ -17,6 +17,11 @@ public class SetDemo8 {
 		drinks.add(new Drink("Beer", 70));
 		drinks.add(new Drink("Yakult", 10));
 		drinks.add(new Drink("Juice", 45));
+		// 觀察物件的 HashCode
+		Drink cola1 = new Drink("Cola", 25);
+		Drink cola2 = new Drink("Cola", 25);
+		System.out.println(cola1.hashCode());
+		System.out.println(cola2.hashCode());
 		
 		// 請問此系列有幾種飲料 ?
 		System.out.printf("系列有幾種飲料: %d%n", drinks.size());
