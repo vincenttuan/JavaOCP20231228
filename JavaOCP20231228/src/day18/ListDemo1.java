@@ -1,12 +1,14 @@
 package day18;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
 public class ListDemo1 {
 	public static void main(String[] args) {
-		List<Integer> list = new ArrayList<>();
+		//List<Integer> list = new ArrayList<>();
+		List<Integer> list = new LinkedList<>();
 		list.add(100);
 		list.add(1, 80); // 指定插入位置
 		list.add(90);
