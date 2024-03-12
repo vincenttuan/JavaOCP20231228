@@ -32,5 +32,12 @@ public class MapDemo3 {
 				}, Collectors.counting()));
 		
 		System.out.println(gradeDistribution);
+		
+		// 分類統計
+		// 等級  數量
+		// 及格:  4
+		// 不及格: 1
+		
+		
 	}
 }
