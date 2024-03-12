@@ -36,9 +36,11 @@ public class MapDemo1 {
 		// 印出元素
 		exams.forEach((key, value) -> System.out.println(key + ":" + value));
 		System.out.println("---------------");
-		exams.entrySet().stream().filter(entry -> entry.getValue() >= 60).forEach(entry -> System.out.println(entry));
+		//exams.entrySet().stream().filter(entry -> entry.getValue() >= 60).forEach(entry -> System.out.println(entry));
+		exams.entrySet().stream().filter(entry -> entry.getValue() >= 60).forEach(System.out::println);
 		System.out.println("---------------");
-		exams.entrySet().stream().filter(entry -> entry.getValue() < 60).forEach(entry -> System.out.println(entry));
+		//exams.entrySet().stream().filter(entry -> entry.getValue() < 60).forEach(entry -> System.out.println(entry));
+		exams.entrySet().stream().filter(entry -> entry.getValue() < 60).forEach(System.out::println);
 	}
 	
 }
