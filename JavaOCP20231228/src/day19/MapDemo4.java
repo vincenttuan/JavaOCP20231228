@@ -1,7 +1,11 @@
 package day19;
 
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class MapDemo4 {
 	public static void main(String[] args) {
@@ -9,6 +13,23 @@ public class MapDemo4 {
 		List<String> fruits = List.of("apple", "apple", "banana", "apple", "orange", "banana", "papaya"); // 唯讀
 		System.out.println(fruits);
 		// 請問每一種水果個有幾個 ?
+		/*
+		Map<String, Long> result = fruits.stream()
+				.collect(Collectors.groupingBy(name -> {
+					return name;
+				}, Collectors.counting()));
+		*/
+		Map<String, Long> result = fruits.stream()
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		
+		System.out.println(result);
+		
+		// 按照數量大->小排序
+		Map<String, Long> sortedMap = new LinkedHashMap<>();
+		result.entrySet().stream()
+				.sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+				.forEachOrdered(entry -> sortedMap.put(entry.getKey(), entry.getValue()));
+		System.out.println(sortedMap);
 		
 	}
 }
