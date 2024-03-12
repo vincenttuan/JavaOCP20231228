@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.counting;
+
 public class MapDemo4 {
 	public static void main(String[] args) {
 		//List<String> fruits = Arrays.asList("apple", "apple", "banana", "apple", "orange", "banana", "papaya");
@@ -20,7 +23,7 @@ public class MapDemo4 {
 				}, Collectors.counting()));
 		*/
 		Map<String, Long> result = fruits.stream()
-				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+				.collect(groupingBy(Function.identity(), counting()));
 		
 		System.out.println(result);
 		
@@ -30,6 +33,8 @@ public class MapDemo4 {
 				.sorted(Map.Entry.<String, Long>comparingByValue().reversed())
 				.forEachOrdered(entry -> sortedMap.put(entry.getKey(), entry.getValue()));
 		System.out.println(sortedMap);
+		
+		
 		
 	}
 }
