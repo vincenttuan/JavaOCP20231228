@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.counting;
+import static java.util.function.Function.identity;
 
 public class MapDemo4 {
 	public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class MapDemo4 {
 				}, Collectors.counting()));
 		*/
 		Map<String, Long> result = fruits.stream()
-				.collect(groupingBy(Function.identity(), counting()));
+				.collect(groupingBy(identity(), counting()));
 		
 		System.out.println(result);
 		
