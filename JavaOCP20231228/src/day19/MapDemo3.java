@@ -37,7 +37,14 @@ public class MapDemo3 {
 		// 等級  數量
 		// 及格:  4
 		// 不及格: 1
+		Map<String, Long> passDistribution = exams.values().stream()
+				.collect(Collectors.groupingBy(score -> {
+					if(score >= 60) return "及格";
+					else return "不及格";
+				}, Collectors.counting()));
 		
-		
+		System.out.println(passDistribution);
+		System.out.println(passDistribution.get("及格"));
+		System.out.println(passDistribution.get("不及格"));
 	}
 }
