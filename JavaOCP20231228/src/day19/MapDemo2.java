@@ -28,5 +28,10 @@ public class MapDemo2 {
 		
 		// 請印出成績等於或超過平均分數的科目
 		System.out.println("成績等於或超過平均分數的科目:");
+		exams.entrySet().stream()
+						.filter(entry -> entry.getValue() >= average)
+						//.forEach(entry -> System.out.println(entry));
+						.forEach(entry -> printExams1.accept(entry.getKey(), entry.getValue()));
+		
 	}
 }
