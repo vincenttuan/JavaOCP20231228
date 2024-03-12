@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.BiConsumer;
 
 public class MapDemo1 {
 	
@@ -29,6 +30,10 @@ public class MapDemo1 {
 		System.out.println(keys); // Set 集合
 		Collection<Integer> values = exams.values(); 
 		System.out.println(values); // Collection/List 集合
+		
+		// 印出元素
+		exams.forEach((key, value) -> System.out.println(key + ":" + value));
+		
 	}
 	
 }
