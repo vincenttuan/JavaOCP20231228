@@ -21,7 +21,8 @@ public class MapDemo2 {
 		exams.forEach(printExams1);
 		exams.forEach(printExams2);
 		
-		// 請幫我印出平均分數
+		// 請幫我印出平均分數(利用 exams.values())
+		System.out.println("平均分數:");
 		
 		
 	}
