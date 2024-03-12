@@ -22,8 +22,11 @@ public class MapDemo2 {
 		exams.forEach(printExams2);
 		
 		// 請幫我印出平均分數(利用 exams.values())
-		System.out.println("平均分數:");
+		System.out.print("平均分數:");
+		double average = exams.values().stream().mapToInt(Integer::intValue).average().getAsDouble();
+		System.out.println(average);
 		
-		
+		// 請印出成績等於或超過平均分數的科目
+		System.out.println("成績等於或超過平均分數的科目:");
 	}
 }
