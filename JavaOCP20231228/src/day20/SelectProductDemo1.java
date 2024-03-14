@@ -29,6 +29,9 @@ public class SelectProductDemo1 {
 			String sql = "select id, name, cost, price, qty from product"; // 建立 sql 語句
 			ResultSet rs = stmt.executeQuery(sql); // 執行 sql 語句, 並得到一個結果資料集合
 			// 3. 分析 Result Set
+			System.out.println("+----+-------+----+-----+-----+");
+			System.out.println("| ID |  Name |Cost|Price| Qty |");
+			System.out.println("+----+-------+----+-----+-----+");
 			while(rs.next()) {
 				Integer id = rs.getInt("id");
 				String name = rs.getString("name");
@@ -37,6 +40,7 @@ public class SelectProductDemo1 {
 				Integer qty = rs.getInt("qty");
 				System.out.printf("| %02d | %s | %2d | %3d | %3d |%n", id, name, cost, price, qty);
 			}
+			System.out.println("+----+-------+----+-----+-----+");
 			// 4. 關閉資源不須有順序性
 			rs.close();
 			stmt.close();
