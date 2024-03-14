@@ -32,7 +32,7 @@ public class SelectProductDemo1 {
 			// 3. 分析 Result Set
 			
 			ResultSetMetaData md = rs.getMetaData();
-			System.out.println(md.getColumnName(1));
+			System.out.println(md.getColumnName(1)); // 記得從 1 開始
 			System.out.println(md.getColumnName(2));
 			System.out.println(md.getColumnName(3));
 			System.out.println(md.getColumnName(4));
