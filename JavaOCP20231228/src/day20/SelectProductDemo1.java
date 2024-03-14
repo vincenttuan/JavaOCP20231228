@@ -3,6 +3,7 @@ package day20;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -29,8 +30,17 @@ public class SelectProductDemo1 {
 			String sql = "select id, name, cost, price, qty from product"; // 建立 sql 語句
 			ResultSet rs = stmt.executeQuery(sql); // 執行 sql 語句, 並得到一個結果資料集合
 			// 3. 分析 Result Set
+			
+			ResultSetMetaData md = rs.getMetaData();
+			System.out.println(md.getColumnName(1));
+			System.out.println(md.getColumnName(2));
+			System.out.println(md.getColumnName(3));
+			System.out.println(md.getColumnName(4));
+			System.out.println(md.getColumnName(5));
+			
 			System.out.println("+----+-------+----+-----+-----+");
-			System.out.println("| ID |  Name |Cost|Price| Qty |");
+			System.out.printf("| %s |  %s |%s|%s| %s |%n", 
+					md.getColumnName(1), md.getColumnName(2), md.getColumnName(3), md.getColumnName(4), md.getColumnName(5));
 			System.out.println("+----+-------+----+-----+-----+");
 			while(rs.next()) {
 				Integer id = rs.getInt("id");
