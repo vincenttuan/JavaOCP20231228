@@ -35,7 +35,7 @@ public class SelectProductDemo1 {
 				Integer cost = rs.getInt("cost");
 				Integer price = rs.getInt("price");
 				Integer qty = rs.getInt("qty");
-				System.out.printf("| %d | %s | %d | %d | %d |%n", id, name, cost, price, qty);
+				System.out.printf("| %02d | %s | %2d | %3d | %3d |%n", id, name, cost, price, qty);
 			}
 			// 4. 關閉資源不須有順序性
 			rs.close();
