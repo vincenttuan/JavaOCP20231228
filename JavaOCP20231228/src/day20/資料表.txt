@@ -1,0 +1,38 @@
+-- 刪除 product 資料表
+drop table if exists product;
+
+-- 建立 product 資料表
+create table if not exists product (
+	id int not null auto_increment,
+    name varchar(255) not null unique,
+    cost int not null default 0,
+    price int not null default 0,
+    qty int not null default 0,
+    primary key(id)
+);
+
+-- 加入資料列
+insert into product(name, cost, price, qty) values('無糖咖啡', 10, 40, 100);
+insert into product(name, cost, price, qty) values('錫蘭紅茶', 2, 35, 100);
+insert into product(name, cost, price, qty) values('西瓜原汁', 20, 80, 100);
+insert into product(name, cost, price, qty) values('可口可樂', 8, 25, 100);
+insert into product(name, cost, price, qty) values('木瓜牛奶', 30, 90, 100);
+insert into product(name, cost, price, qty) values('芋頭牛奶', 35, 100, 100);
+insert into product(name, cost, price, qty) values('珍珠奶茶', 15, 60, 100);
+
+=======================================================================================
+
+use demo; -- 使用 demo 資料庫
+-- 查詢資料
+-- select * from demo.product;
+-- select * from product;
+-- select id, name, cost, price, qty from product;
+-- select name, price, qty from product;
+-- select id, name, cost, price, qty from product where id = 2;
+-- select id, name, cost, price, qty from product where price >= 50 and cost <= 20
+-- select name, cost, price, (price-cost)/cost as 'profit' from product order by profit asc;
+-- select name, cost, price, (price-cost)/cost as 'profit' from product order by profit desc;
+-- select name, cost, price, (price-cost)/cost as 'profit' from product order by profit desc limit 1;
+select avg((price-cost)/cost) as 'avg_profit' from product -- 平均獲利率
+
+
