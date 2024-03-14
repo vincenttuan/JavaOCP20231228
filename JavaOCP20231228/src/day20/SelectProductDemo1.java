@@ -42,14 +42,18 @@ public class SelectProductDemo1 {
 			System.out.printf("| %s |  %s |%s|%s| %s |%n", 
 					md.getColumnName(1), md.getColumnName(2), md.getColumnName(3), md.getColumnName(4), md.getColumnName(5));
 			System.out.println("+----+-------+----+-----+-----+");
+			int total = 0;
 			while(rs.next()) {
 				Integer id = rs.getInt("id");
 				String name = rs.getString("name");
 				Integer cost = rs.getInt("cost");
 				Integer price = rs.getInt("price");
 				Integer qty = rs.getInt("qty");
+				total += qty;
 				System.out.printf("| %02d | %s | %2d | %3d | %3d |%n", id, name, cost, price, qty);
 			}
+			System.out.println("+----+-------+----+-----+-----+");
+			System.out.printf("|%23s: %3d |%n", "Total", total);
 			System.out.println("+----+-------+----+-----+-----+");
 			// 4. 關閉資源不須有順序性
 			rs.close();
