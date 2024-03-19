@@ -41,7 +41,9 @@ public class UserAndProductDemo {
 		String sql = "select id, username, password from user where username = ?";
 		try(Connection conn = DriverManager.getConnection(url, dbUsername, dbPassword);
 			PreparedStatement pstmt = conn.prepareStatement(sql);) {
+			
 			pstmt.setString(1, username); // 1: 表示 sql 第一個問號的內容
+			
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()) { // 若有找到資料
 				// 取出 password
