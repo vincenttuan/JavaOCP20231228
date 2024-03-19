@@ -29,6 +29,8 @@ public class ExceptionDemo2 {
 		} catch (ArithmeticException e2) {
 			System.out.println("計算錯誤, 錯誤原因:" + e2);
 			System.out.println("請重新輸入");
+		} finally {
+			scanner.close();
 		}
 		return false;
 	}
