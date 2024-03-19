@@ -14,9 +14,11 @@ public class UserAndProductDemo {
 		try(Scanner scanner = new Scanner(System.in)) {
 			while (true) {
 				if(login(scanner)) {
+					System.out.println("登入成功");
 					break; // 登入成功跳出迴圈
 				}
 				// 登入失敗重新登入
+				System.out.println("登入失敗重新登入");
 			}
 		} catch (Exception e) {
 			
