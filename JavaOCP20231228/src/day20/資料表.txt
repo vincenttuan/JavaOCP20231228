@@ -51,4 +51,5 @@ create table if not exists user (
 insert into user(username, password) values('john', '1234');
 insert into user(username, password) values('mary', '5678');
 
+=======================================================================================
 SELECT * FROM demo.user;
