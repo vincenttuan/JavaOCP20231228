@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
 public class UserAndProductDemo {
@@ -24,9 +25,33 @@ public class UserAndProductDemo {
 			
 		}
 		// 2. 登入成功取得商品資訊
-		//    
+		printProducts();
 		
 	}
+	
+	public static void printProducts() {
+		String url = "jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Taipei";
+		String dbUsername = "root";
+		String dbPassword = "12345678";
+		String sql = "select id, name, cost, price, qty from product order by id";
+		try(Connection conn = DriverManager.getConnection(url, dbUsername, dbPassword);
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql)) {
+			
+			while (rs.next()) {
+				Integer id = rs.getInt("id");
+				String name = rs.getString("name");
+				Integer cost = rs.getInt("cost");
+				Integer price = rs.getInt("price");
+				Integer qty = rs.getInt("qty");
+				System.out.printf("%d %s %d %d %d%n", id, name, cost, price, qty);
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("資料庫錯誤: " + e);
+		}
+	}
+	
 	
 	public static boolean login(Scanner scanner) {
 		System.out.print("請輸入 username: ");
