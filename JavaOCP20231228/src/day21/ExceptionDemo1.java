@@ -21,7 +21,7 @@ public class ExceptionDemo1 {
 		} catch	(InputMismatchException e) {
 			System.out.println("分子輸入錯誤, 錯誤原因:" + e);
 			System.out.println("請重新輸入");
-			input(); // 重新執行
+			input(); // 重新執行(利用遞迴)
 		}
 	}
 
