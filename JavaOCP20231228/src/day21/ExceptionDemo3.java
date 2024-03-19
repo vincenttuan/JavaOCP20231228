@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+// 不是好方法
 public class ExceptionDemo3 {
 
 	public static void main(String[] args) {

@@ -3,6 +3,7 @@ package day21;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+// 不是好方法
 public class ExceptionDemo2 {
 
 	public static void main(String[] args) {
