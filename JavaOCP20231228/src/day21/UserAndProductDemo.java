@@ -26,8 +26,6 @@ public class UserAndProductDemo {
 				// 登入失敗重新登入
 				System.out.println("登入失敗重新登入");
 			}
-		} catch (Exception e) {
-			
 		}
 		// 2. 登入成功取得商品資訊
 		printProducts();
@@ -68,15 +66,17 @@ public class UserAndProductDemo {
 			
 			pstmt.setString(1, username); // 1: 表示 sql 第一個問號的內容
 			
-			ResultSet rs = pstmt.executeQuery();
-			if(rs.next()) { // 若有找到資料
-				// 取出 password
-				String userPassword = rs.getString("password");
-				// 比對 password
-				if(userPassword.equals(password)) {
-					return true;
+			try(ResultSet rs = pstmt.executeQuery()) {
+				if(rs.next()) { // 若有找到資料
+					// 取出 password
+					String userPassword = rs.getString("password");
+					// 比對 password
+					if(userPassword.equals(password)) {
+						return true;
+					}
 				}
 			}
+			
 			return false;
 		} catch (SQLException e) {
 			System.out.println("資料庫錯誤: " + e);
