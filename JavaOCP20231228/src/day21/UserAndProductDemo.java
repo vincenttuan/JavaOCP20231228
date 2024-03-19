@@ -9,7 +9,12 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class UserAndProductDemo {
-
+	
+	private final static String URL = "jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Taipei";
+	private final static String DB_USERNAME = "root";
+	private final static String DB_PASSWORD = "12345678";
+	
+	
 	public static void main(String[] args) {
 		// 1. 登入
 		try(Scanner scanner = new Scanner(System.in)) {
@@ -30,11 +35,8 @@ public class UserAndProductDemo {
 	}
 	
 	public static void printProducts() {
-		String url = "jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Taipei";
-		String dbUsername = "root";
-		String dbPassword = "12345678";
 		String sql = "select id, name, cost, price, qty from product order by id";
-		try(Connection conn = DriverManager.getConnection(url, dbUsername, dbPassword);
+		try(Connection conn = DriverManager.getConnection(URL, DB_USERNAME, DB_PASSWORD);
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql)) {
 			
@@ -60,11 +62,8 @@ public class UserAndProductDemo {
 		String password = scanner.next();
 		
 		// 到 user 資料表驗證
-		String url = "jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Taipei";
-		String dbUsername = "root";
-		String dbPassword = "12345678";
 		String sql = "select id, username, password from user where username = ?";
-		try(Connection conn = DriverManager.getConnection(url, dbUsername, dbPassword);
+		try(Connection conn = DriverManager.getConnection(URL, DB_USERNAME, DB_PASSWORD);
 			PreparedStatement pstmt = conn.prepareStatement(sql);) {
 			
 			pstmt.setString(1, username); // 1: 表示 sql 第一個問號的內容
