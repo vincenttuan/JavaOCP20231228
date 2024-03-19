@@ -18,8 +18,12 @@ public class ExceptionDemo1 {
 			int y = scanner.nextInt();
 			int result = x / y;
 			System.out.printf("result = %d%n", result);
-		} catch	(InputMismatchException e) {
-			System.out.println("輸入錯誤, 錯誤原因:" + e);
+		} catch	(InputMismatchException e1) {
+			System.out.println("輸入錯誤, 錯誤原因:" + e1);
+			System.out.println("請重新輸入");
+			input(); // 重新執行(利用遞迴)
+		} catch (ArithmeticException e2) {
+			System.out.println("計算錯誤, 錯誤原因:" + e2);
 			System.out.println("請重新輸入");
 			input(); // 重新執行(利用遞迴)
 		}
