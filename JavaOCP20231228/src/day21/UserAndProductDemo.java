@@ -35,10 +35,10 @@ public class UserAndProductDemo {
 		String password = scanner.next();
 		
 		// 到 user 資料表驗證
-		String url = "jdbc:mysql://localhost:3306/user?serverTimeZone=ASIA/TAIPEI";
+		String url = "jdbc:mysql://localhost:3306/demo?serverTimeZone=ASIA/TAIPEI";
 		String dbUsername = "root";
 		String dbPassword = "12345678";
-		String sql = "select id, username, password where username = ?";
+		String sql = "select id, username, password from user where username = ?";
 		try(Connection conn = DriverManager.getConnection(url, dbUsername, dbPassword);
 			PreparedStatement pstmt = conn.prepareStatement(sql);) {
 			pstmt.setString(1, username); // 1: 表示 sql 第一個問號的內容
