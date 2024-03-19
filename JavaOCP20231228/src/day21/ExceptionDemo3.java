@@ -1,6 +1,7 @@
 package day21;
 
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class ExceptionDemo3 {
@@ -29,7 +30,7 @@ public class ExceptionDemo3 {
 		} catch (ArithmeticException e2) {
 			System.out.println("計算錯誤, 錯誤原因:" + e2);
 			System.out.println("請重新輸入");
-		}
+		} 
 		return false;
 	}
 
