@@ -35,7 +35,7 @@ public class UserAndProductDemo {
 		String password = scanner.next();
 		
 		// 到 user 資料表驗證
-		String url = "jdbc:mysql://localhost:3306/demo?serverTimeZone=ASIA/TAIPEI";
+		String url = "jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Taipei";
 		String dbUsername = "root";
 		String dbPassword = "12345678";
 		String sql = "select id, username, password from user where username = ?";
