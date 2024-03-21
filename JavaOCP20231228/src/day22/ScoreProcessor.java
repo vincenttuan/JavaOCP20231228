@@ -24,16 +24,21 @@ public class ScoreProcessor {
 		Set<Score> scores = new LinkedHashSet<>();
 		// 逐筆將資料拆解後放到 scores 集合中
 		for(int i=1;i<rows.length;i++) {
-			String data = rows[i]; // John,100,90,80
-			String[] parts = data.split(","); // 拆解
-			Score score = new Score();
-			score.setStudentName(parts[0]);
-			score.setChinese(Integer.parseInt(parts[1]));
-			score.setEnglish(Integer.parseInt(parts[2]));
-			score.setMath(Integer.parseInt(parts[3]));
+			String line = rows[i]; // John,100,90,80
+			Score score = lineToScore(line);
 			// 注入到 scores 集合中保存
 			scores.add(score);
 		}
 		return scores;
+	}
+	
+	private Score lineToScore(String line) {
+		String[] parts = line.split(","); // 拆解
+		Score score = new Score();
+		score.setStudentName(parts[0]);
+		score.setChinese(Integer.parseInt(parts[1]));
+		score.setEnglish(Integer.parseInt(parts[2]));
+		score.setMath(Integer.parseInt(parts[3]));
+		return score;
 	}
 }
