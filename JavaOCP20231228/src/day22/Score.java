@@ -1,5 +1,7 @@
 package day22;
 
+import java.util.Objects;
+
 public class Score {
 	private String studentName;
 	private Integer chinese;
@@ -42,6 +44,24 @@ public class Score {
 	}
 	public void setAvg(Double avg) {
 		this.avg = avg;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(avg, chinese, english, math, studentName, sum);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Score other = (Score) obj;
+		return Objects.equals(avg, other.avg) && Objects.equals(chinese, other.chinese)
+				&& Objects.equals(english, other.english) && Objects.equals(math, other.math)
+				&& Objects.equals(studentName, other.studentName) && Objects.equals(sum, other.sum);
 	}
 	@Override
 	public String toString() {
