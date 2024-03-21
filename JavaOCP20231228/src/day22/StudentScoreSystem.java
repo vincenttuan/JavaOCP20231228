@@ -31,13 +31,18 @@ public class StudentScoreSystem {
 						String.format("%.1f", score.getAvg())))
 				.collect(Collectors.joining("\n", header, "")); // 每一筆資料以 \n 隔開, 加入表頭, 尾末資訊
 		
+		Path path = Path.of("src\\day22\\output\\result.csv");
 		try {
+			// 先刪除舊檔案
+			Files.deleteIfExists(path);
+			// 建立檔案並新增內容
 			Files.writeString(
-					Path.of("src\\day22\\output\\result.csv"), 
+					path, 
 					csvContent, 
 					StandardOpenOption.CREATE); // 創建新文件, 若文件存在則覆蓋
+			System.out.println(path + " 建立檔案與寫入資料成功");
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println(path + " 建立檔案與寫入資料失敗, " + e);
 		}
 		
 		
