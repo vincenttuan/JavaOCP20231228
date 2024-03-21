@@ -9,7 +9,7 @@ public class StudentScoreSystem {
 		Set<Score> scores = scoreProcessor.readFile2("src\\day22\\output\\score.csv");
 		System.out.println("1. 讀取檔案(score.csv):" + scores);
 		// 2. 分析內容
-		scoreProcessor.scoreAnalysys(scores);
+		scoreProcessor.scoreAnalysis(scores);
 		System.out.println("2. 分析內容:" + scores);
 		// 3. 輸出分析內容(result.csv)
 		

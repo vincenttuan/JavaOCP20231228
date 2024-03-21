@@ -49,7 +49,7 @@ public class ScoreProcessor {
 	}
 	
 	// 2. 分析內容
-	public void scoreAnalysys(Set<Score> scores) {
+	public void scoreAnalysis(Set<Score> scores) {
 		scores.stream().forEach(score -> {
 			score.setSum(score.getChinese() + score.getEnglish() + score.getMath());
 			score.setAvg(score.getSum() / 3.0);
