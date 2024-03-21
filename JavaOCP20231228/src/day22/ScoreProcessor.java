@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ScoreProcessor {
 	// 1. 讀取檔案(score.csv)
@@ -28,6 +30,20 @@ public class ScoreProcessor {
 			Score score = lineToScore(line);
 			// 注入到 scores 集合中保存
 			scores.add(score);
+		}
+		return scores;
+	}
+	
+	// 利用 Java Stream 來進行讀取檔案工作
+	public Set<Score> readFile2(String filePath) {
+		Set<Score> scores = null;
+		try(Stream<String> lines = Files.lines(Path.of(filePath))) {
+			scores = lines
+					.skip(1) // 跳過第一行
+					.map(this::lineToScore) //.map(line -> lineToScore(line))
+					.collect(Collectors.toSet());
+		} catch (IOException e) {
+			return null;
 		}
 		return scores;
 	}
