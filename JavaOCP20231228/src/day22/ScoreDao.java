@@ -57,7 +57,7 @@ public class ScoreDao {
 		
 		String sql = "insert into score(name, chinese, english, math, sum, avg) values (?, ?, ?, ?, ?, ?)";
 		try(Connection conn = DriverManager.getConnection(URL, DB_USERNAME, DB_PASSWORD);
-			PreparedStatement pstmt = conn.prepareStatement(sql);) {
+			PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			// 批次新增
 			pstmt.clearBatch(); // 先將 batch 記憶體資料清空, 重要 !!
 			
@@ -69,7 +69,7 @@ public class ScoreDao {
 				pstmt.setInt(5, score.getSum());
 				pstmt.setDouble(6, score.getAvg());
 				// 加入到 batch
-				pstmt.addBatch(sql);
+				pstmt.addBatch();
 			}
 			
 			int[] rowcounts = pstmt.executeBatch();
