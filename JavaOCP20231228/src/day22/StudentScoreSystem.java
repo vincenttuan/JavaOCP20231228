@@ -5,6 +5,7 @@ import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class StudentScoreSystem {
 	public static void main(String[] args) {
@@ -16,11 +17,25 @@ public class StudentScoreSystem {
 		scoreProcessor.scoreAnalysis(scores);
 		System.out.println("2. 分析內容:" + scores);
 		// 3. 輸出分析內容(result.csv)
+		// CSV的頭部
+		String header = "name,chinese,english,math,sum,avg\n";
+		
+		// 使用 Steam 將 scores 集合轉換為 CSV 格式
+		String csvContent = scores.stream()
+				.map(score -> String.join(",", 
+						score.getStudentName(), 
+						score.getChinese().toString(), 
+						score.getEnglish().toString(), 
+						score.getMath().toString(), 
+						score.getSum().toString(), 
+						String.format("%.1f", score.getAvg())))
+				.collect(Collectors.joining("\n", header, "")); // 每一筆資料以 \n 隔開, 加入表頭, 尾末資訊
+		
 		try {
 			Files.writeString(
 					Path.of("src\\day22\\output\\result.csv"), 
-					scores.toString(), 
-					StandardOpenOption.CREATE);
+					csvContent, 
+					StandardOpenOption.CREATE); // 創建新文件, 若文件存在則覆蓋
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
