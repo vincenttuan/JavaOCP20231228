@@ -13,4 +13,7 @@ public class StudentScoreSystem {
 		// 5. 批次匯入(result.csv)
 		
 	}
+	
+	// 1. 讀取檔案(score.csv)
+	
 }
