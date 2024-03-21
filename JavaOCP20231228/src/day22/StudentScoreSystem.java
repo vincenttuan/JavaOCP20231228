@@ -1,11 +1,6 @@
 package day22;
 
-import java.nio.file.Files;
-import java.nio.file.OpenOption;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class StudentScoreSystem {
 	public static void main(String[] args) {
@@ -18,7 +13,7 @@ public class StudentScoreSystem {
 		System.out.println("2. 分析內容:" + scores);
 		// 3. 輸出分析內容(result.csv)
 		Boolean isWriteOK = scoreProcessor.writeFile("src\\day22\\output\\result.csv", scores);
-		System.out.println("3. 輸出分析內容(result.csv)建立檔案與寫入資料成功");
+		System.out.println("3. 輸出分析內容(result.csv)建立檔案與寫入資料" + (isWriteOK?"成功":"失敗"));
 		
 		
 		// 4. 登入程序
