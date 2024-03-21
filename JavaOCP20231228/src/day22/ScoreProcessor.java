@@ -39,7 +39,7 @@ public class ScoreProcessor {
 		Set<Score> scores = null;
 		try(Stream<String> lines = Files.lines(Path.of(filePath))) {
 			scores = lines
-					.skip(1) // 跳過第一行
+					.skip(1) // 跳過一行
 					.map(this::lineToScore) //.map(line -> lineToScore(line))
 					.collect(Collectors.toSet());
 		} catch (IOException e) {
