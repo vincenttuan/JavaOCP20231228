@@ -48,6 +48,14 @@ public class ScoreProcessor {
 		return scores;
 	}
 	
+	// 2. 分析內容
+	public void scoreAnalysys(Set<Score> scores) {
+		scores.stream().forEach(score -> {
+			score.setSum(score.getChinese() + score.getEnglish() + score.getMath());
+			score.setAvg(score.getSum() / 3.0);
+		});
+	}
+	
 	private Score lineToScore(String line) {
 		String[] parts = line.split(","); // 拆解
 		Score score = new Score();
