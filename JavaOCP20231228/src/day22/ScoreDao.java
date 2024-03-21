@@ -7,12 +7,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
+import java.util.Set;
 
 public class ScoreDao {
 	private final static String URL = "jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Taipei";
 	private final static String DB_USERNAME = "root";
 	private final static String DB_PASSWORD = "12345678";
 	
+	// 4. 登入程序
 	public Boolean login() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("請輸入 username: ");
@@ -43,6 +45,19 @@ public class ScoreDao {
 			System.out.println("資料庫錯誤: " + e);
 		}
 		return false;
+	}
+	
+	// 5. 批次匯入(result.csv)
+	public Boolean batchUpdate(Set<Score> scores) {
+		boolean isTableCreateOK = createScoreTable();
+		if(!isTableCreateOK) {
+			return false;
+		}
+		
+		String sql = "insert into score(name, chinese, english, math, sum, avg) values (?, ?, ?, ?, ?, ?)";
+		
+		
+		return true;
 	}
 	
 	// 建立 score 資料表
