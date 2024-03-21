@@ -55,8 +55,15 @@ public class ScoreDao {
 		}
 		
 		String sql = "insert into score(name, chinese, english, math, sum, avg) values (?, ?, ?, ?, ?, ?)";
-		
-		
+		try(Connection conn = DriverManager.getConnection(URL, DB_USERNAME, DB_PASSWORD);
+			PreparedStatement pstmt = conn.prepareStatement(sql);) {
+			
+			
+			
+		} catch (SQLException e) {
+			System.out.println("資料庫錯誤: " + e);
+			return false;
+		}
 		return true;
 	}
 	
