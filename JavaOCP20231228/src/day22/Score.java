@@ -5,9 +5,8 @@ public class Score {
 	private Integer chinese;
 	private Integer english;
 	private Integer math;
-	private Integer summary;
-	private Double average;
-	
+	private Integer sum;
+	private Double avg;
 	public String getStudentName() {
 		return studentName;
 	}
@@ -32,23 +31,24 @@ public class Score {
 	public void setMath(Integer math) {
 		this.math = math;
 	}
-	public Integer getSummary() {
-		return summary;
+	public Integer getSum() {
+		return sum;
 	}
-	public void setSummary(Integer summary) {
-		this.summary = summary;
+	public void setSum(Integer sum) {
+		this.sum = sum;
 	}
-	public Double getAverage() {
-		return average;
+	public Double getAvg() {
+		return avg;
 	}
-	public void setAverage(Double average) {
-		this.average = average;
+	public void setAvg(Double avg) {
+		this.avg = avg;
 	}
 	@Override
 	public String toString() {
 		return "Score [studentName=" + studentName + ", chinese=" + chinese + ", english=" + english + ", math=" + math
-				+ ", summary=" + summary + ", average=" + average + "]";
+				+ ", sum=" + sum + ", avg=" + avg + "]";
 	}
+	
 	
 	
 }
