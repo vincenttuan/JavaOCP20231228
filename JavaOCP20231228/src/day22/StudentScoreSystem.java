@@ -17,33 +17,8 @@ public class StudentScoreSystem {
 		scoreProcessor.scoreAnalysis(scores);
 		System.out.println("2. 分析內容:" + scores);
 		// 3. 輸出分析內容(result.csv)
-		// CSV的頭部
-		String header = "name,chinese,english,math,sum,avg\n";
-		
-		// 使用 Steam 將 scores 集合轉換為 CSV 格式
-		String csvContent = scores.stream()
-				.map(score -> String.join(",", 
-						score.getStudentName(), 
-						score.getChinese().toString(), 
-						score.getEnglish().toString(), 
-						score.getMath().toString(), 
-						score.getSum().toString(), 
-						String.format("%.1f", score.getAvg())))
-				.collect(Collectors.joining("\n", header, "")); // 每一筆資料以 \n 隔開, 加入表頭, 尾末資訊
-		
-		Path path = Path.of("src\\day22\\output\\result.csv");
-		try {
-			// 先刪除舊檔案
-			Files.deleteIfExists(path);
-			// 建立檔案並新增內容
-			Files.writeString(
-					path, 
-					csvContent, 
-					StandardOpenOption.CREATE); // 創建新文件, 若文件存在則覆蓋
-			System.out.println("3. 輸出分析內容(result.csv)建立檔案與寫入資料成功");
-		} catch (Exception e) {
-			System.out.println("3. 輸出分析內容(result.csv)建立檔案與寫入資料成功失敗, " + e);
-		}
+		Boolean isWriteOK = scoreProcessor.writeFile("src\\day22\\output\\result.csv", scores);
+		System.out.println("3. 輸出分析內容(result.csv)建立檔案與寫入資料成功");
 		
 		
 		// 4. 登入程序

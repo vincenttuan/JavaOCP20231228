@@ -3,6 +3,7 @@ package day22;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -56,6 +57,39 @@ public class ScoreProcessor {
 		});
 	}
 	
+	// 3. 輸出分析內容(result.csv)
+	public Boolean writeFile(String filePath, Set<Score> scores) {
+		// CSV的頭部
+		String header = "name,chinese,english,math,sum,avg\n";
+		
+		// 使用 Steam 將 scores 集合轉換為 CSV 格式
+		String csvContent = scores.stream()
+				.map(score -> String.join(",", 
+						score.getStudentName(), 
+						score.getChinese().toString(), 
+						score.getEnglish().toString(), 
+						score.getMath().toString(), 
+						score.getSum().toString(), 
+						String.format("%.1f", score.getAvg())))
+				.collect(Collectors.joining("\n", header, "")); // 每一筆資料以 \n 隔開, 加入表頭, 尾末資訊
+		
+		Path path = Path.of("src\\day22\\output\\result.csv");
+		try {
+			// 先刪除舊檔案
+			Files.deleteIfExists(path);
+			// 建立檔案並新增內容
+			Files.writeString(
+					path, 
+					csvContent, 
+					StandardOpenOption.CREATE); // 創建新文件, 若文件存在則覆蓋
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace(); // 印出錯誤堆疊內的所有資訊(詳細錯誤資訊)
+			return false;
+		}
+	}
+	
+	// 將字串拆解成 Score 物件
 	private Score lineToScore(String line) {
 		String[] parts = line.split(","); // 拆解
 		Score score = new Score();
