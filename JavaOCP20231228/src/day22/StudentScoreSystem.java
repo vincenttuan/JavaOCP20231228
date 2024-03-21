@@ -1,5 +1,9 @@
 package day22;
 
+import java.nio.file.Files;
+import java.nio.file.OpenOption;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.Set;
 
 public class StudentScoreSystem {
@@ -12,6 +16,15 @@ public class StudentScoreSystem {
 		scoreProcessor.scoreAnalysis(scores);
 		System.out.println("2. 分析內容:" + scores);
 		// 3. 輸出分析內容(result.csv)
+		try {
+			Files.writeString(
+					Path.of("src\\day22\\output\\result.csv"), 
+					scores.toString(), 
+					StandardOpenOption.CREATE);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		
 		// 4. 登入程序
 		
