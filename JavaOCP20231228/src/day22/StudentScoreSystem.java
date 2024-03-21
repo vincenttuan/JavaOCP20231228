@@ -13,7 +13,7 @@ public class StudentScoreSystem {
 		StudentScoreSystem system = new StudentScoreSystem();
 		// 1. 讀取檔案(score.csv)
 		Set<Score> scores = system.readFile("src\\day22\\output\\score.csv");
-		System.out.println(scores);
+		System.out.println("1. 讀取檔案(score.csv):" + scores);
 		// 2. 分析內容
 		
 		// 3. 輸出分析內容(result.csv)
