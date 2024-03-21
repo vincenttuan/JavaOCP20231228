@@ -40,9 +40,9 @@ public class StudentScoreSystem {
 					path, 
 					csvContent, 
 					StandardOpenOption.CREATE); // 創建新文件, 若文件存在則覆蓋
-			System.out.println(path + " 建立檔案與寫入資料成功");
+			System.out.println("3. 輸出分析內容(result.csv)建立檔案與寫入資料成功");
 		} catch (Exception e) {
-			System.out.println(path + " 建立檔案與寫入資料失敗, " + e);
+			System.out.println("3. 輸出分析內容(result.csv)建立檔案與寫入資料成功失敗, " + e);
 		}
 		
 		
