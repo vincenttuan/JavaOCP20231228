@@ -29,6 +29,8 @@ public class StudentScoreSystem {
 		}
 		
 		// 5. 批次匯入(result.csv)
+		Boolean isBatchOK = scoreDao.batchUpdate(scores);
+		System.out.println("5. 批次匯入(result.csv)" + (isBatchOK?"成功":"失敗"));
 		
 	}
 }
