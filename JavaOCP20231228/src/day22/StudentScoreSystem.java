@@ -14,8 +14,6 @@ public class StudentScoreSystem {
 		// 3. 輸出分析內容(result.csv)
 		Boolean isWriteOK = scoreProcessor.writeFile("src\\day22\\output\\result.csv", scores);
 		System.out.println("3. 輸出分析內容(result.csv)建立檔案與寫入資料" + (isWriteOK?"成功":"失敗"));
-		
-		
 		// 4. 登入程序
 		
 		// 5. 批次匯入(result.csv)
