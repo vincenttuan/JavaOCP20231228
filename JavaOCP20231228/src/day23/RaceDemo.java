@@ -10,7 +10,7 @@ public class RaceDemo {
 		System.out.println("比賽開始");
 		
 		turtle.start();
-		turtle.start();
+		rabbit.start();
 
 	}
 
