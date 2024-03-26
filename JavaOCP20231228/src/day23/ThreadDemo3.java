@@ -16,7 +16,7 @@ public class ThreadDemo3 {
 		total.start(); // 開始執行任務
 		
 		// 總共有幾條執行緒
-		System.out.printf("執行緒數量: %d%n", Thread.activeCount());
+		System.out.printf("Active 執行緒數量: %d%n", Thread.activeCount());
 		
 		System.out.printf("執行緒名字: %s, 結束%n", tName);
 	}
