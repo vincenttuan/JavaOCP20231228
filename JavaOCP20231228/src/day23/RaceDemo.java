@@ -9,13 +9,14 @@ public class RaceDemo {
 		tortoise.setName("烏龜");
 		rabbit.setName("兔子");
 		// 設定權限
-		tortoise.setPriority(10);
-		rabbit.setPriority(1);
+		tortoise.setPriority(Thread.MAX_PRIORITY); // 10
+		rabbit.setPriority(Thread.MIN_PRIORITY); // 1
 		
 		System.out.println("比賽開始");
 		
-		tortoise.start();
 		rabbit.start();
+		tortoise.start();
+		
 
 	}
 
