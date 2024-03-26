@@ -21,11 +21,11 @@ public class RaceDemo2 {
 		// 取出 values()
 		Collection<Race> values = map.values();
 		
-		// 開跑(逐一)
+		// 開跑(逐一) 順序流
 		//values.stream() 
 		//	  .forEach(race -> race.start());
 		
-		// 開跑(併行)
+		// 開跑(併行) 併行流
 		values.parallelStream()
 			  .forEach(race -> race.start());
 	}
