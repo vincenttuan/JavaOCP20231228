@@ -1,6 +1,6 @@
 package day23;
 
-public class Even {
+public class Even extends Thread {
 	private void job() {
 		String tName = Thread.currentThread().getName();
 		// 任務一: 1~1000 的所有偶數並逐項把累計資料印出
