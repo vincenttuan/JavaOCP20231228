@@ -1,6 +1,12 @@
 package day23;
 
 public class Odd extends Thread {
+	
+	@Override
+	public void run() { // Todo-list
+		job();
+	}
+
 	private void job() {
 		String tName = Thread.currentThread().getName();
 		// 任務二: 1~1000 的所有奇數並逐項把累計資料印出
