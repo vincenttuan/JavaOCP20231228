@@ -31,7 +31,12 @@ public class ThreadDemo4 {
 		Thread t5 = new Thread(job2); // 建立一個 t5 執行緒來做 job2 的工作
 		
 		List<Thread> threads = List.of(t1, t2, t3, t4, t5);
-		threads.forEach(t -> t.start());
+		// 分時多工
+		//threads.forEach(t -> t.start());
+		
+		// 平行運算
+		threads.parallelStream().forEach(t -> t.start());
+		
 		
 	}
 
