@@ -3,6 +3,7 @@ package day24;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.jsoup.Jsoup;
@@ -35,10 +36,12 @@ public class ThreadDemo7 {
 			}
 		};
 		
-		Thread t1 = new Thread(crawler, "2330");
-		t1.start();
-		Thread t2 = new Thread(crawler, "2317");
-		t2.start();
+		List<String> symbols = List.of("2330", "2317", "3008", "1101", "2454", "2382");
+		symbols.parallelStream().forEach(symbol -> {
+			Thread t = new Thread(crawler, symbol);
+			t.start();
+		});
+		
 
 	}
 
