@@ -10,7 +10,8 @@ public class ThreadDemo4 {
 	public static void main(String[] args) {
 		// 利用 Runnable 來創建執行緒工作
 		Runnable job1 = () -> { // 顯示現在日期與時間
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S E");
+			//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S E");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd a hh:mm:ss.S E");
 			System.out.println("現在時刻: " + sdf.format(new Date()));
 		};
 		
