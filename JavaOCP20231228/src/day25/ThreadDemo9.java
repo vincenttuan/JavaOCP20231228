@@ -20,13 +20,13 @@ public class ThreadDemo9 {
 		);
 		
 		// 使用 CachedThreadPool 或 newFixedThreadPool 管理執行緒
-		ExecutorService exector = Executors.newFixedThreadPool(5);
+		ExecutorService executor = Executors.newFixedThreadPool(5);
 		
 		// 使用 Stream API 提交任務
-		tasks.stream().forEach(task -> exector.execute(task));
+		tasks.stream().forEach(task -> executor.execute(task));
 		
 		// 任務完成關閉服務
-		exector.shutdown();
+		executor.shutdown();
 		
 	}
 }
