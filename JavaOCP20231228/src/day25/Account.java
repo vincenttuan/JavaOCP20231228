@@ -47,4 +47,9 @@ public class Account {
 		
 	}
 	
+	// 考慮一下是否要加入 synchronized
+	public void printBalance() {
+		System.out.println(balance);
+	}
+	
 }
