@@ -31,8 +31,8 @@ public class ThreadDemo10 {
 				new Deposit(account, 1000)
 		);
 		
-		//ExecutorService executor = Executors.newFixedThreadPool(5, threadFactory);
-		ExecutorService executor = Executors.newCachedThreadPool(threadFactory);
+		ExecutorService executor = Executors.newFixedThreadPool(5, threadFactory);
+		//ExecutorService executor = Executors.newCachedThreadPool(threadFactory);
 		
 		// 使用 Stream API 提交任務
 		//tasks.stream().forEach(task -> executor.execute(task));
