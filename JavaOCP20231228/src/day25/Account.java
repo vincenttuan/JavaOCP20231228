@@ -25,7 +25,20 @@ public class Account {
 		} else {
 			System.out.printf("%s 提款 $%d 失敗, 帳戶餘額 $%d%n", tName, amount, balance);
 		}
+	}
+	
+	// 存款
+	public synchronized void deposit(int amount) {
+		String tName = Thread.currentThread().getName();
+		System.out.printf("%s 進來存款 $%d, 帳戶餘額 $%d%n", tName, amount, balance);
+		// 進行存款
+		// 模擬存款所花費的時間
+		for(int i=0;i<=999999;i++);
 		
+		// 帳戶增額
+		balance = balance + amount;
+		
+		System.out.printf("%s 存款 $%d 成功, 帳戶餘額 $%d%n", tName, amount, balance);
 	}
 	
 }
