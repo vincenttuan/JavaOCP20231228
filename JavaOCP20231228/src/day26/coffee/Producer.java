@@ -7,12 +7,20 @@ public class Producer implements Runnable {
 	private MessageQueue queue;
 	
 	// 咖啡庫存
-	private int coffeeStock = 0;
+	private int coffeeStock;
 	
-	public Producer(MessageQueue queue) {
+	// 最大生產量
+	private int maxAmount;
+	
+	public Producer(MessageQueue queue, int maxAmount) {
 		this.queue = queue;
+		this.maxAmount = maxAmount;
 	}
-
+	
+	public int getMaxAmount() {
+		return maxAmount;
+	}
+	
 	@Override
 	public void run() {
 		System.out.println("生產者 run()");

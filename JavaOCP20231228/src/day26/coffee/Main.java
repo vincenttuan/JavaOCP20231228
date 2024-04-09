@@ -3,7 +3,7 @@ package day26.coffee;
 public class Main {
 	public static void main(String[] args) throws Exception {
 		MessageQueue queue = new MessageQueue();
-		Producer producer = new Producer(queue);
+		Producer producer = new Producer(queue, 20);
 		Consumer consumer1 = new Consumer(queue);
 		Consumer consumer2 = new Consumer(queue);
 		
