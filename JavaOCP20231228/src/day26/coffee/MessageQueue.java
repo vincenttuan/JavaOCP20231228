@@ -17,7 +17,7 @@ public class MessageQueue {
 	}
 	
 	// 消費
-	public synchronized String consume(String message) {
+	public synchronized String consume() {
 		// 查驗 queue 是否有資料
 		if(queue.isEmpty()) {
 			System.out.println("消費者等待中...");
