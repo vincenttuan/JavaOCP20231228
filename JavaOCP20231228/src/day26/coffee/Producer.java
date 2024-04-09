@@ -24,8 +24,5 @@ public class Producer implements Runnable {
 		System.out.println("生產後庫存:" + coffeeStock);
 	}
 	
-	public int getCoffeeStock() {
-		return coffeeStock;
-	}
 	
 }
