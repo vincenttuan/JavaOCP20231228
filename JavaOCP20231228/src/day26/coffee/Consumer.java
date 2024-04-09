@@ -15,7 +15,7 @@ public class Consumer implements Runnable {
 		for(int i=1;i<=10;i++) {
 			String data = queue.consume(); // 從對列中取出一杯咖啡
 			// 消費 data
-			System.out.printf("消費者喝了第 %d 杯 %s%n", data);
+			System.out.printf("消費者喝了第 %d 杯 %s%n", i, data);
 		}
 	}
 
