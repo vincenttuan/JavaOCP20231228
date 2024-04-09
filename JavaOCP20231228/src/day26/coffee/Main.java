@@ -12,7 +12,7 @@ public class Main {
 		new Thread(consumer2, "小英").start(); // 消費啟動
 		
 		// 生產者不斷生產咖啡
-		while(true) {
+		for(int i=1;i<=producer.getMaxAmount();i++) {
 			Thread.sleep(3000);
 			new Thread(producer).start(); // 生產啟動
 		}
