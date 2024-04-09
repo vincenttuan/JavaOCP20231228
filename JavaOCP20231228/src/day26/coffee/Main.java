@@ -13,7 +13,7 @@ public class Main {
 		
 		// 生產者不斷生產咖啡
 		for(int i=1;i<=producer.getMaxAmount();i++) {
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			new Thread(producer).start(); // 生產啟動
 		}
 		
