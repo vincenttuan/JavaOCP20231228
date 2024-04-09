@@ -7,7 +7,7 @@ public class Producer implements Runnable {
 	private MessageQueue queue;
 	
 	// 咖啡庫存
-	private int coffeeStock = 10;
+	private int coffeeStock = 0;
 	
 	public Producer(MessageQueue queue) {
 		this.queue = queue;
@@ -20,7 +20,7 @@ public class Producer implements Runnable {
 		// 模擬生產咖啡
 		queue.produce("拿鐵咖啡");
 		// 庫存更新
-		coffeeStock--;
+		coffeeStock++;
 		System.out.println("生產後庫存:" + coffeeStock);
 	}
 	
